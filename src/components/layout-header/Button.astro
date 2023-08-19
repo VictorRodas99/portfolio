@@ -1,0 +1,14 @@
+---
+interface Props {
+  id: string
+  class: string
+}
+
+const { id, class: className } = Astro.props
+---
+
+<div class="px-4 grid place-items-center border-l-[1px]">
+  <button id={id} class={className}>
+    <slot />
+  </button>
+</div>
