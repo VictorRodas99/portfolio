@@ -1,11 +1,8 @@
 ---
-import SunIcon from '@icons/SunIcon.astro'
 import MoonIcon from '@icons/MoonIcon.astro'
-import DesktopIcon from '@icons/DesktopIcon.astro'
 import LanguagesIcon from '@icons/LanguagesIcon.astro'
-
-import Button from '@components/layout-header/Button.astro'
 import NavOptions from '@components/layout-header/NavOptions.astro'
+import ThemeOptions from '@components/layout-header/ThemeOptions.astro'
 ---
 
 <header
@@ -14,27 +11,25 @@ import NavOptions from '@components/layout-header/NavOptions.astro'
   <nav class="flex">
     <NavOptions />
 
-    <Button id="theme-button" class="text-primary-400 header-button">
-      <MoonIcon />
-    </Button>
+    <div class="px-4 grid place-items-center border-l-[1px]">
+      <button
+        id="theme-button"
+        class="text-primary-400 header-button"
+        type="button"
+        aria-label="theme selector trigger"
+      >
+        <MoonIcon />
+      </button>
+    </div>
 
-    <ul
-      id="theme-dialog"
-      class="hidden min-w-[140px] text-sm font-medium bg-secondary-100 absolute right-0 top-[3.5rem] z-10 flex-col rounded-lg overflow-hidden [&>li]:flex [&>li]:gap-2 [&>li]:items-center [&>li]:p-2 [&>li]:cursor-pointer"
-    >
-      <li class="hover:bg-primary-400 transition-colors">
-        <SunIcon /><span>Light</span>
-      </li>
-      <li class="hover:bg-primary-400 transition-colors">
-        <MoonIcon /><span>Dark</span>
-      </li>
-      <li class="hover:bg-primary-400 transition-colors">
-        <DesktopIcon /><span>System</span>
-      </li>
-    </ul>
+    <ThemeOptions />
 
     <div class="px-4 grid place-items-center border-l-[1px]">
-      <button class="text-primary-50 header-button">
+      <button
+        class="text-primary-400 dark:text-primary-50 header-button"
+        type="button"
+        aria-label="language selector trigger"
+      >
         <LanguagesIcon />
       </button>
     </div>
@@ -43,7 +38,7 @@ import NavOptions from '@components/layout-header/NavOptions.astro'
 
 <style>
   .bouncy {
-    animation: getting-smol 0.3s ease-in-out;
+    animation: getting-smol var(--animation-duration) ease-in-out;
   }
 
   @keyframes getting-smol {
@@ -58,63 +53,10 @@ import NavOptions from '@components/layout-header/NavOptions.astro'
 </style>
 
 <script>
-  import { getAllDescendants } from '../utils/element-handling'
+  import { animateButtons } from '@client-scripts/animations'
 
-  const themeDialog = document.querySelector('#theme-dialog') as HTMLUListElement
-  const themeButton = document.querySelector('#theme-button') as HTMLButtonElement
-
-  let themeButtonDescendants = []
-  let themeDialogDescendants = []
-  let dialogState = false
-
-  if (!themeDialog || !themeButton) {
-    throw new Error(
-      'There is no element with id "theme-dialog" or element with id "theme-button"'
-    )
-  }
-
-  window.addEventListener('click', (event) => {
-    if(!themeButtonDescendants.length && !themeDialogDescendants.length) {
-      themeButtonDescendants = getAllDescendants({ parent: themeButton })
-      themeDialogDescendants = getAllDescendants({ parent: themeDialog })
-    }
-
-    const isDialogDescendant = themeDialogDescendants.find((child) => child === event.target)
-    
-    if(isDialogDescendant) {
-      return
-    }
-
-    const isButtonDescendant = themeButtonDescendants.find((child) => child == event.target)
-    let displayState = ''
-
-    if(isButtonDescendant) {
-      dialogState = !dialogState
-      displayState = dialogState ? 'flex' : 'none'
-    } else {
-      displayState = 'none'
-    }
-    
-    themeDialog.style.display = displayState
-  })
-</script>
-
-<script>
-  const buttonClass = '.header-button'
-
-  const buttons = Array.from(document.querySelectorAll(buttonClass))
-  const existsButtons = buttons.filter(
-    (element) => element instanceof HTMLButtonElement
-  )
-
-  if (!existsButtons.length) {
-    throw new Error(`There is no buttons with class "${buttonClass}"`)
-  }
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      button.classList.add('bouncy')
-      setTimeout(() => button.classList.remove('bouncy'), 400)
-    })
+  animateButtons({
+    selector: '.header-button',
+    classTrigger: 'bouncy'
   })
 </script>
