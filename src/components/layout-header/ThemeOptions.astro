@@ -1,0 +1,52 @@
+---
+import SunIcon from '@icons/SunIcon.astro'
+import MoonIcon from '@icons/MoonIcon.astro'
+import DesktopIcon from '@icons/DesktopIcon.astro'
+---
+
+<ul
+  id="theme-dialog"
+  class="hidden min-w-[140px] text-sm font-medium border border-secondary-100 dark:bg-secondary-100 absolute right-0 top-[3.5rem] z-10 flex-col rounded-lg overflow-hidden [&>li]:flex [&>li]:gap-2 [&>li]:items-center [&>li]:p-2 [&>li]:cursor-pointer"
+>
+  <li id="light" class="hover:bg-primary-400 transition-colors aria-[selected='true']:text-primary-400 aria-[selected='true']:hover:text-primary-50" role="option" aria-selected="false">
+    <SunIcon /><span>Light</span>
+  </li>
+  <li id="dark" class="hover:bg-primary-400 transition-colors aria-[selected='true']:text-primary-400 aria-[selected='true']:hover:text-primary-50" role="option" aria-selected="false">
+    <MoonIcon /><span>Dark</span>
+  </li>
+  <li id="system" class="hover:bg-primary-400 transition-colors aria-[selected='true']:text-primary-400 aria-[selected='true']:hover:text-primary-50" role="option" aria-selected="false">
+    <DesktopIcon /><span>System</span>
+  </li>
+</ul>
+
+<script src="@client-scripts/dialog-theme-controller"></script>
+
+<script>
+  import { manualHandler } from '@client-scripts/theme-control'
+
+  const themeOptions = document.querySelectorAll('#theme-dialog>li')
+  const dialogContainer = document.querySelector('#theme-dialog')
+
+  if(!(dialogContainer instanceof HTMLElement)) {
+    throw new Error('#theme-dialog does not exists')
+  }
+
+  if(!themeOptions.length) {
+    throw new Error('#theme-dialog>li element does not exists')
+  }
+  
+  for(const option of themeOptions) {
+    option.addEventListener('click', ({ currentTarget }) => {
+      if(currentTarget instanceof HTMLElement) {
+        manualHandler(currentTarget)
+
+        themeOptions.forEach((el) => el.ariaSelected = 'false')
+
+        option.ariaSelected = 'true'
+        dialogContainer.style.display = 'none'
+      } else {
+        console.warn('currentTarget of themeOption is not an instance of HTMLElement')
+      }
+    })
+  }  
+</script>
