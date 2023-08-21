@@ -7,7 +7,8 @@
       "@icons/*": ["src/components/icons/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@client-scripts/*": ["src/scripts/*"]
     }
   }
 }
