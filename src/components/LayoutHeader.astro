@@ -1,14 +1,20 @@
 ---
 import MoonIcon from '@icons/MoonIcon.astro'
 import LanguagesIcon from '@icons/LanguagesIcon.astro'
+import ArrowDownIcon from '@components/icons/ArrowDownIcon.astro'
 import NavOptions from '@components/layout-header/NavOptions.astro'
 import ThemeOptions from '@components/layout-header/ThemeOptions.astro'
 ---
 
 <header
-  class="absolute right-8 top-8 rounded-md border-[1px] dark:bg-secondary-100"
+  class="absolute right-8 sm:top-8 rounded-md border-[1px] dark:bg-secondary-100"
 >
   <nav class="flex">
+    <div id='mobile-menu-trigger' class="px-3 p-2 flex gap-1 justify-center items-center sm:hidden">
+      <button>Menú</button>
+      <ArrowDownIcon id='arrow-menu'/>
+    </div>
+    
     <NavOptions />
 
     <div class="px-4 grid place-items-center border-l-[1px]">
@@ -24,7 +30,7 @@ import ThemeOptions from '@components/layout-header/ThemeOptions.astro'
 
     <ThemeOptions />
 
-    <div class="px-4 grid place-items-center border-l-[1px]">
+    <div class="hidden px-4 sm:grid place-items-center border-l-[1px]">
       <button
         class="text-primary-400 dark:text-primary-50 header-button"
         type="button"
