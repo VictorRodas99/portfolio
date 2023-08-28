@@ -1,21 +1,16 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import HeroSection from '@components/HeroSection.astro'
 import LayoutHeader from '@components/LayoutHeader.astro'
 import GradientBackground from '@components/GradientBackground.astro'
 ---
 
 <Layout title="Welcome to Astro.">
   <LayoutHeader />
-
   <GradientBackground />
 
-  <main class="flex">
-    <!-- <section>
-      <header>
-        <h1 class="text-6xl font-semibold">Soy Víctor Rodas</h1>
-      </header>
-      <p class="text-base font-normal leading-7 md:pr-10 md:text-lg">Mi objetivo es utilizar la programación como un medio para crear maravillas duraderas.</p>
-    </section> -->
+  <main class="flex w-full">
+    <HeroSection />
   </main>
 </Layout>
 
