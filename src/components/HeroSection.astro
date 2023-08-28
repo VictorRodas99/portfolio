@@ -1,0 +1,23 @@
+<section class="self-center">
+  <header class="relative">
+    <div id="hero-text" class="text-6xl font-semibold flex gap-3">
+      <span class="text-secondary-300">Soy</span>
+      <div id="overlay">
+        <h1 class="text-secondary-300 mix-blend-color-burn absolute hero-name">Víctor Rodas</h1>
+        <p class="text-secondary-50 asbolute opacity-40 hero-name">Víctor Rodas</p>
+      </div>
+    </div>
+  </header>
+  <!-- <p class="text-base font-normal leading-7 md:pr-10 md:text-lg">Mi objetivo es utilizar la programación como un medio para crear maravillas duraderas.</p> -->
+</section>
+
+<script>
+  import { HeroAnimation } from '@client-scripts/animations'
+
+  const messages = [
+    'Víctor Rodas',
+    'Web Developer'
+  ]
+
+  new HeroAnimation('.hero-name', messages, true)
+</script>
