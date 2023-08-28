@@ -1,3 +1,10 @@
+/**
+ * Normalizes a hexadecimal color code into an array of normalized RGB values
+ */
+export const normalizeColor = (hexCode: number) => {
+  return [(hexCode >> 16 & 255) / 255, (hexCode >> 8 & 255) / 255, (255 & hexCode) / 255]
+}
+
 export const getParsedCSSVariableDuration = ({
   variableName
 }: {
