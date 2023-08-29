@@ -10,12 +10,16 @@ import ArrowDownIconXL from '@components/icons/ArrowDownIconXL.astro'
   <LayoutHeader />
   <GradientBackground />
 
-  <main class="flex w-full">
+  <main class="flex flex-col w-full">
     <HeroSection />
 
-    <button type="button" class="md:hidden absolute bottom-10 left-[45%] animate-bounce">
+    <button type="button" class="left-[45%] md:left-[50%] absolute bottom-10 animate-bounce hover:text-primary-500 transition-colors">
       <ArrowDownIconXL />
     </button>
+
+    <section>
+      <h2 class="text-4xl font-bold leading-10">Experiencia</h2>
+    </section>
   </main>
 </Layout>
 
