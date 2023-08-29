@@ -1,15 +1,59 @@
-<section class="self-center">
-  <header class="relative">
-    <div id="hero-text" class="text-6xl font-semibold flex gap-3">
-      <span class="text-secondary-300">Soy</span>
+---
+import GithubIcon from '@icons/GithubIcon.astro'
+import MailIcon from '@icons/MailIcon.astro'
+import LinkedinIcon from '@icons/LindekinIcon.astro'
+---
+
+<section class="pt-16 md:pt-0 overflow-hidden self-center flex flex-col gap-8 md:justify-center">
+  <header class="overflow-hidden relative h-28 md:h-auto">
+    <div id="hero-text" class="flex flex-col md:flex-row gap-3 text-4xl md:text-5xl font-semibold select-none">
+      <span class="text-secondary-200">Soy</span>
       <div id="overlay">
-        <h1 class="text-secondary-300 mix-blend-color-burn absolute hero-name">Víctor Rodas</h1>
-        <p class="text-secondary-50 asbolute opacity-40 hero-name">Víctor Rodas</p>
+        <h1 class=" text-secondary-200 mix-blend-color-burn absolute hero-name">Víctor Rodas</h1>
+        <p class="text-primary-50 asbolute opacity-40 hero-name">Víctor Rodas</p>
       </div>
     </div>
   </header>
-  <!-- <p class="text-base font-normal leading-7 md:pr-10 md:text-lg">Mi objetivo es utilizar la programación como un medio para crear maravillas duraderas.</p> -->
+
+  <div class="md:max-w-[70%]">
+    <p class="text-secondary-200 text-base font-normal leading-7 md:pr-10 md:text-lg">Y mi principal objetivo es utilizar la programación como un medio para crear maravillas duraderas.</p>
+  </div>
+
+  <footer class="flex justify-center md:justify-normal gap-6 text-secondary-200">
+    <a href="https://github.com/VictorRodas99" class="social-icons">
+      <GithubIcon />
+    </a>
+
+    <a href="mailto:victormrodas99@gmail.com" class="social-icons">
+      <MailIcon />
+    </a>
+
+    <a href="" class="social-icons">
+      <LinkedinIcon />
+    </a>
+  </footer>
 </section>
+
+<style>
+  .social-icons {
+    position: relative;
+  }
+
+  .social-icons::before {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    border-radius: 5px;
+    width: 0px;
+    height: 5px;
+    background-color: #fffdfdff;
+    transition: all .2s ease-in-out;
+  }
+
+  .social-icons:hover::before {
+    width: 42px;
+  }
+</style>
 
 <script>
   import { HeroAnimation } from '@client-scripts/animations'
