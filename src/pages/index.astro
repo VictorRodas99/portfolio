@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro'
 import HeroSection from '@components/HeroSection.astro'
 import LayoutHeader from '@components/LayoutHeader.astro'
 import GradientBackground from '@components/GradientBackground.astro'
+import ArrowDownIconXL from '@components/icons/ArrowDownIconXL.astro'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,6 +12,10 @@ import GradientBackground from '@components/GradientBackground.astro'
 
   <main class="flex w-full">
     <HeroSection />
+
+    <button type="button" class="md:hidden absolute bottom-10 left-[45%] animate-bounce">
+      <ArrowDownIconXL />
+    </button>
   </main>
 </Layout>
 
