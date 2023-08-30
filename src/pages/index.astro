@@ -4,6 +4,8 @@ import HeroSection from '@components/HeroSection.astro'
 import LayoutHeader from '@components/LayoutHeader.astro'
 import GradientBackground from '@components/GradientBackground.astro'
 import ArrowDownIconXL from '@components/icons/ArrowDownIconXL.astro'
+import HammerIcon from '@components/icons/HammerIcon.astro'
+import BloodIcon from '@components/icons/BloodIcon.astro'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -17,11 +19,70 @@ import ArrowDownIconXL from '@components/icons/ArrowDownIconXL.astro'
       <ArrowDownIconXL />
     </button>
 
-    <section>
-      <h2 class="text-4xl font-bold leading-10">Experiencia</h2>
+    <section class="flex flex-col gap-12">
+      <div class="flex flex-col gap-2 w-56">
+        <h2 class="text-4xl font-bold leading-10 m-auto">Experiencia</h2>
+        <span id="underline" class="h-2 bg-primary-500 rounded m-auto"></span>
+      </div>
+
+      <div class="flex gap-7">
+        <div class="flex flex-col gap-4 flex-grow w-[25%] p-4 border border-primary-100 rounded-lg">
+          <header class="flex gap-3 items-center">
+            <HammerIcon />
+            <h4 class="font-bold text-lg">Experiencia laboral</h4>
+            <p class="opacity-70 flex-grow text-end">Feb 2022 - Ag 2022</p>
+          </header>
+
+          <div class="flex gap-4 items-center mt-4">
+            <BloodIcon />
+            
+            <div class="flex flex-col gap-2">
+              <h5 class="font-bold text-xl">Sistema de gestión de hemoderivados</h5>
+              <p class="text-sm md:text-lg text-secondary-200">Desarollador Front-end</p>
+            </div>
+          </div>
+
+          <p class="text-base">Fui el principal desarrollador del frontend en un proyecto innovador para una empresa de hemoderivados. Diseñé y construí la interfaz que permitió gestionar de manera eficiente el inventario de heladeras. Mi enfoque se centró en crear una experiencia de usuario intuitiva y amigable.</p>
+        </div>
+
+        <div class="flex flex-col gap-4 flex-grow w-[25%] p-4 border border-primary-100 rounded-lg">
+          <header class="flex gap-3 items-center">
+            <HammerIcon />
+            <h4 class="font-bold text-lg">Responsabilidades</h4>
+          </header>
+
+          <div class="flex flex-col gap-2 text-center mt-4">
+            <h5 class="font-bold text-xl">Sistema de gestión de hemoderivados</h5>
+            <p class="text-sm md:text-lg text-secondary-200">Desarollador Front-end</p>
+          </div>
+
+          <ul class="text-sm list-disc p-4 flex flex-col gap-4">
+            <li>Desarollar y mantener el Front-End de los diferentes endpoints del sistema</li>
+            <li>Colaboré estrechamente con el equipo para integrar el sistema con una base de datos en la nube, lo que permitió el acceso en tiempo real a los datos cruciales desde distintos dispositivos.</li>
+            <li>Aseguré que la interfaz fuera funcional y accesible en diferentes dispositivos, incluyendo computadoras y teléfonos móviles, para una gestión flexible desde cualquier ubicación.</li>
+          </ul>
+
+        </div>
+      </div>
     </section>
   </main>
 </Layout>
+
+<style>
+  #underline {
+    animation: grow 2s alternate infinite;
+  }
+
+  @keyframes grow {
+    0% {
+      width: 0%;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+</style>
 
 <script>
   import { setThemePrefrence } from '@client-scripts/theme-control'
