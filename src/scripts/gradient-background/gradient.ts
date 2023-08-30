@@ -1,6 +1,6 @@
 import MiniGL from './core/mini-gl'
 import { shaderFiles } from './shaders/shader-definitions'
-import { Material, Mesh, PlaneGeometry, Uniform } from './core/types'
+import type { Material, Mesh, PlaneGeometry, Uniform } from './core/types'
 import { normalizeColor } from '@utils/general-tools'
 
 /**

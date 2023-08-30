@@ -1,7 +1,7 @@
-import { MiniGLInterface } from './types'
-import { CommonUniforms, UniformType, UniformTypeFn } from './types'
-import { Mesh, Uniform, Attribute, PlaneGeometry, Material } from './types'
-import {
+import type { MiniGLInterface } from './types'
+import type { CommonUniforms, UniformType, UniformTypeFn } from './types'
+import type { Mesh, Uniform, Attribute, PlaneGeometry, Material } from './types'
+import type {
   MaterialConstructor,
   UniformConstructor,
   PlaneGeometryConstructor,
