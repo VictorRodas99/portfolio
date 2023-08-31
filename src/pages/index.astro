@@ -14,13 +14,16 @@ import Experience from '@components/Experience.astro'
   <section class="flex flex-col w-full">
     <HeroSection />
 
-    <button type="button" class="text-primary-200 left-[45%] md:left-[50%] absolute bottom-2 md:bottom-10 animate-bounce hover:text-primary-500 transition-colors">
+    <button id="arrow-btn" type="button" class="text-primary-200 left-[45%] md:left-[50%] absolute bottom-2 md:bottom-10 animate-bounce hover:text-primary-500 transition-colors">
       <ArrowDownIconXL />
     </button>
 
     <Experience />
   </section>
 </Layout>
+
+
+<script src="@client-scripts/arrow-button"></script>
 
 <script>
   import { setThemePrefrence } from '@client-scripts/theme-control'
