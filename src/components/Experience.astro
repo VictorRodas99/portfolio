@@ -6,37 +6,39 @@ import Gradient from '@components/experience-section/Gradient.astro'
 ---
 
 <section class="flex flex-col gap-12">
-  <article class="flex flex-col gap-2 w-56">
+  <article class="flex flex-col gap-2 md:w-56">
     <h2 class="text-4xl font-bold leading-10 m-auto">Experiencia</h2>
     <span id="underline" class="h-2 bg-primary-500 rounded m-auto"></span>
   </article>
 
-  <article class="flex gap-7 overflow-hidden">
-    <div class="group flex flex-col gap-4 flex-grow w-[25%] p-4 border border-primary-100 rounded-lg relative hover:border-primary-500 transition-all">
+  <article class="flex flex-col lg:flex-row gap-7 overflow-hidden">
+    <div class="group flex flex-col gap-4 flex-grow lg:w-[25%] p-4 md:p-8 lg:p-4 border border-primary-100 rounded-lg relative hover:border-primary-500 transition-all">
       <Gradient />
 
       <header class="flex gap-3 items-center">
         <HammerIcon />
-        <h4 class="font-bold text-lg ">Experiencia laboral</h4>
-        <p class="opacity-70 flex-grow text-end">Feb 2022 - Ag 2022</p>
+        <h4 class="font-bold text-lg">Experiencia laboral</h4>
+        <p class="hidden lg:block opacity-70 flex-grow text-end">Feb 2022 - Ag 2022</p>
       </header>
 
-      <div class="flex gap-4 items-center mt-4">
+      <div class="flex flex-col md:flex-row text-center md:text-start gap-4 lg:items-center mt-4">
           <BloodIcon />
           
           <div class="flex flex-col gap-2">
             <h5 class="font-bold text-xl">Sistema de gestión de hemoderivados</h5>
-            <p class="text-sm md:text-lg text-secondary-200">Desarollador Front-end</p>
+            <p class="text-[12px] lg:text-sm md:text-lg text-secondary-200">Desarollador Front-end</p>
+            <p class="opacity-50 leading-7 lg:hidden">Feb 2022 - Ag 2022</p>
+            <p class="italic opacity-50">Freelance</p>
           </div>
       </div>
 
-      <div class="flex flex-col gap-4 translate-y-5 transition-transform duration-500 group-hover:translate-y-0">
+      <div class="flex flex-col gap-4 lg:translate-y-5 transition-transform duration-500 group-hover:translate-y-0">
         <p class="text-base">Fui el principal desarrollador del frontend en un proyecto innovador para una empresa de hemoderivados. Diseñé y construí la interfaz que permitió gestionar de manera eficiente el inventario de heladeras. Mi enfoque se centró en crear una experiencia de usuario intuitiva y amigable.</p>
         <Technologies />
       </div>
     </div>
 
-    <div class="flex flex-col gap-4 flex-grow w-[25%] p-4 border border-primary-100 rounded-lg hover:border-primary-500 transition-all">
+    <div class="flex flex-col gap-4 flex-grow lg:w-[25%] p-4 md:p-8 lg:p-4 border border-primary-100 rounded-lg hover:border-primary-500 transition-all">
       <header class="flex gap-3 items-center">
         <HammerIcon />
         <h4 class="font-bold text-lg">Responsabilidades</h4>

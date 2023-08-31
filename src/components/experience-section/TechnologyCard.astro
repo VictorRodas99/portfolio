@@ -7,7 +7,7 @@ interface Props {
 const { name, bgColor } = Astro.props
 ---
 
-<div class="min-w-[125px] flex gap-2 items-center p-2 rounded-lg select-none" style={{ backgroundColor: bgColor }}>
+<div class="w-auto lg:min-w-[125px] flex gap-2 items-center p-2 rounded-lg select-none" style={{ backgroundColor: bgColor }}>
   <slot/>
-  <span class="text-sm">{name}</span>
+  <span class="hidden md:block text-sm">{name}</span>
 </div>
