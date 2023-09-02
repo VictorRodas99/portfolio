@@ -1,0 +1,29 @@
+---
+interface Props {
+  id?: string
+  title: string
+}
+
+const { id, title } = Astro.props
+---
+
+<article class="flex flex-col gap-2 md:w-56" role="presentation">
+  <h2 id={id} class="text-4xl font-bold leading-10 m-auto">{title}</h2>
+  <span id="underline" class="h-2 bg-primary-500 rounded m-auto"></span>
+</article>
+
+<style>
+  #underline {
+    animation: grow 2s alternate infinite;
+  }
+
+  @keyframes grow {
+    0% {
+      width: 0%;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+</style>
