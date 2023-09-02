@@ -2,14 +2,12 @@
 import BloodIcon from '@components/icons/BloodIcon.astro'
 import Technologies from '@components/experience-section/Technologies.astro'
 import Gradient from '@components/experience-section/Gradient.astro'
-import ExperienceCard from './experience-section/ExperienceCard.astro';
+import ExperienceCard from './experience-section/ExperienceCard.astro'
+import Title from './Title.astro'
 ---
 
 <section class="flex flex-col gap-12">
-  <article class="flex flex-col gap-2 md:w-56">
-    <h2 id="experience-section-title" class="text-4xl font-bold leading-10 m-auto">Experiencia</h2>
-    <span id="underline" class="h-2 bg-primary-500 rounded m-auto"></span>
-  </article>
+  <Title id="experience-section-title" title='Experiencia'/>
 
   <article class="flex flex-col lg:flex-row gap-7 overflow-hidden">
     <ExperienceCard title='Experiencia laboral'>
@@ -47,19 +45,3 @@ import ExperienceCard from './experience-section/ExperienceCard.astro';
     </ExperienceCard>
   <article/>
 </section>
-
-<style>
-  #underline {
-    animation: grow 2s alternate infinite;
-  }
-
-  @keyframes grow {
-    0% {
-      width: 0%;
-    }
-
-    100% {
-      width: 100%;
-    }
-  }
-</style>
