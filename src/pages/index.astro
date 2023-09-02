@@ -2,26 +2,105 @@
 import Layout from '@layouts/Layout.astro'
 import HeroSection from '@components/HeroSection.astro'
 import LayoutHeader from '@components/LayoutHeader.astro'
-import GradientBackground from '@components/GradientBackground.astro'
+import GradientBackground from '@components/GradientBackground'
 import ArrowDownIconXL from '@components/icons/ArrowDownIconXL.astro'
 import Experience from '@components/Experience.astro'
+import Title from '@components/Title.astro'
+
+import { Image } from 'astro:assets'
+import projectOneImage from '../assets/img/e-commerce-full.png'
+import projectOneImageLight from '../assets/img/e-commerce-full-light.png' 
+
+import TechnologyCard from '@components/experience-section/TechnologyCard.astro'
+import ReactIcon from '@components/icons/skills/ReactIcon.astro'
+import NodejsIcon from '@components/icons/skills/NodejsIcon.astro'
+import CSSIcon from '@components/icons/skills/CSSIcon.astro'
+import CloudflareIcon from '@components/icons/skills/CloudflareIcon.astro'
 ---
 
 <Layout title="Welcome to Astro.">
   <LayoutHeader />
-  <GradientBackground />
+  <GradientBackground client:visible />
 
-  <section class="flex flex-col w-full">
+  <section class="flex flex-col w-full gap-16">
     <HeroSection />
 
-    <button id="arrow-btn" type="button" class="text-primary-200 left-[45%] md:left-[50%] absolute bottom-2 md:bottom-10 animate-bounce hover:text-primary-500 transition-colors">
+    <button id="arrow-btn" type="button" class="text-primary-700 dark:text-primary-200 left-[45%] md:left-[50%] absolute bottom-2 md:bottom-10 animate-bounce hover:text-primary-500 transition-colors">
       <ArrowDownIconXL />
     </button>
 
     <Experience />
+
+    <section class="flex flex-col gap-12 py-16">
+      <Title title='Proyectos'/>
+
+      <article class="flex px-6 gap-40">
+         <div class="group flex-grow w-[20%] border border-primary-100 relative rounded-md overflow-hidden">
+          <header class="grid items-center relative min-h-[300px] overflow-hidden">
+            <Image class="hidden dark:block group-hover:scale-105 transition-transform duration-500 z-10" src={projectOneImage} alt='E-commerce Web Project'/>
+            <Image class="block dark:hidden group-hover:scale-105 transition-transform duration-500 z-10" src={projectOneImageLight} alt='E-commerce Web Project'/>
+          </header>
+
+          <div class="flex flex-col gap-6 relative p-4 translate-y-7 group-hover:translate-y-0 transition-transform duration-200">
+            <div class="opacity-0 group-hover:opacity-20 absolute -top-8 left-0 -z-10 w-full h-[110%] bg-gradient-to-r from-violet-blue from-38% via-violet-blue via-55% to-light-purple to-90% duration-300 transition-opacity"></div>
+            <div class="flex flex-col gap-4">
+              <h2 class="font-bold text-2xl">E-commerce Full-Stack</h2>
+              <p class="leading-7">Desarollado con ReactJS para el Front-End y HonoJS con edge workers para el Back-End. Aunque no permite realizar compras reales, la aplicación te mantendrá al día con los últimos productos de informática y electrónica. El catálogo se actualiza de manera automática semanalmente.</p>
+            </div>
+
+            <footer class="opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <ul class="flex flex-wrap gap-3 items-center">
+                <li>
+                  <a href="https://react.dev/">
+                    <TechnologyCard name='React' bgColor='#04c2e6' minWidth={'80px'}>
+                      <ReactIcon theme='dark' size={25}/>
+                    </TechnologyCard>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://nodejs.org/en">
+                    <TechnologyCard name='NodeJS' bgColor='#81cd39' minWidth={'80px'}>
+                      <NodejsIcon theme='dark' size={25}/>
+                    </TechnologyCard>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                    <TechnologyCard name='CSS' bgColor='#53abd8' minWidth={'80px'}>
+                      <CSSIcon size={25} />
+                    </TechnologyCard>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://workers.cloudflare.com/">
+                    <TechnologyCard name='Edge workers' bgColor='#f38020' minWidth={'80px'}>
+                      <CloudflareIcon theme='dark' size={25}/>
+                    </TechnologyCard>
+                  </a>
+                </li>
+              </ul>
+            </footer>
+          </div>
+         </div>
+
+          <div class="flex-grow w-[20%]">
+            <header class="group relative">
+              <div class="opacity-0 group-hover:opacity-100 absolute -z-10 w-full h-full bg-gradient-to-r from-violet-blue from-38% via-violet-blue via-55% to-light-purple to-90% duration-300 transition-opacity"></div>
+              <h1>hola</h1>
+            </header>
+
+            <div>
+              <h2>E-commerce Full-Stack</h2>
+            </div>
+
+            <footer>
+
+            </footer>
+         </div>
+      </article>
+    </section>
   </section>
 </Layout>
-
 
 <script src="@client-scripts/arrow-button"></script>
 
