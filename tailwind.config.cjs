@@ -6,15 +6,15 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        spain: "url('/img/spain.png')",
-        us: "url('/img/united-states-of-america.png')"
-      },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans]
       }
     },
     colors: {
+      'light-purple': '#a960ee',
+      'ruby': '#ff333d',
+      'violet-blue': '#7770ff',
+
       primary: {
         50: '#fffdfdff',
         100: '#fefaf6',
