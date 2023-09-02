@@ -1,11 +1,11 @@
 ---
-import NavList from '@components/layout-header/NavList.astro'
-import NavOptionsMobile from '@components/layout-header/NavOptionsMobile.astro'
+import NavList from '@components/layout-header/NavList'
+import NavOptionsMobile from '@components/layout-header/NavOptionsMobile'
 ---
 
 <>
-  <NavOptionsMobile />
+  <NavOptionsMobile client:visible/>
   <ul class="hidden sm:flex gap-4 justify-center items-center py-2 px-4 font-medium">
-    <NavList class='hover:text-primary-400 transition-colors'/>
+    <NavList className='hover:text-primary-400 transition-colors'/>
   </ul>
 </>
