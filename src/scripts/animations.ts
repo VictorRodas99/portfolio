@@ -9,7 +9,7 @@ interface AnimateParams {
   classTrigger: string
 }
 
-interface HeroAnimation {  
+interface HeroAnimation {
   target: Element | Element[]
   selector: string
   multiElements: boolean
@@ -17,8 +17,12 @@ interface HeroAnimation {
   messageIndex: number
   currentLength: number
   characters: string
-  fadeBuffer: { c: number, l: string }[]
-  generateRandomString({ randomStringLength }: { randomStringLength: number }): string
+  fadeBuffer: { c: number; l: string }[]
+  generateRandomString({
+    randomStringLength
+  }: {
+    randomStringLength: number
+  }): string
   animateRandomCharacters(): void
   animateFadeBuffer(): void
   cycleText(): void
@@ -60,16 +64,20 @@ class HeroAnimation implements HeroAnimation {
     const target = multiElements
       ? document.querySelectorAll(selector)
       : document.querySelector(selector)
-    
+
     if (!(target instanceof NodeList)) {
       if (!target) {
-        throw new Error(`element with given selector "${selector}" does not exists`)
+        throw new Error(
+          `element with given selector "${selector}" does not exists`
+        )
       }
 
       this.target = target
     } else {
       if (!target.length) {
-        throw new Error(`Elements with given selector "${selector}" doest no exists`)
+        throw new Error(
+          `Elements with given selector "${selector}" doest no exists`
+        )
       }
 
       this.target = Array.from(target)
@@ -90,7 +98,9 @@ class HeroAnimation implements HeroAnimation {
     if (this.multiElements && this.target instanceof Element) {
       this.target.textContent = message
     } else {
-      (this.target as Element[]).forEach((element) => element.textContent = message)
+      ;(this.target as Element[]).forEach(
+        (element) => (element.textContent = message)
+      )
     }
   }
 
@@ -122,7 +132,9 @@ class HeroAnimation implements HeroAnimation {
         this.currentLength = currentMessage.length
       }
 
-      const message = this.generateRandomString({ randomStringLength: this.currentLength })
+      const message = this.generateRandomString({
+        randomStringLength: this.currentLength
+      })
       this.setMessage(message)
 
       setTimeout(this.animateRandomCharacters.bind(this), 20)
@@ -172,7 +184,7 @@ class HeroAnimation implements HeroAnimation {
     this.messageIndex++
 
     if (this.messageIndex >= this.messages.length) {
-      this.messageIndex = 0;
+      this.messageIndex = 0
     }
 
     this.currentLength = 0

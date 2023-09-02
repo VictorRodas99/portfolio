@@ -6,15 +6,18 @@ import NavOptions from '@components/layout-header/NavOptions.astro'
 import ThemeOptions from '@components/layout-header/ThemeOptions.astro'
 ---
 
-<header
-  class="fixed z-50 right-8 flex sm:top-8"
->
-  <nav class="flex absolute right-0 min-w-max rounded-md border-[1px] bg-secondary-200 dark:bg-secondary-100">
-    <div id='mobile-menu-trigger' class="px-3 p-2 flex gap-1 justify-center items-center sm:hidden">
+<header class="fixed z-50 right-8 flex sm:top-8">
+  <nav
+    class="flex absolute right-0 min-w-max rounded-md border-[1px] bg-secondary-200 dark:bg-secondary-100"
+  >
+    <div
+      id="mobile-menu-trigger"
+      class="px-3 p-2 flex gap-1 justify-center items-center sm:hidden"
+    >
       <button>Menú</button>
-      <ArrowDownIcon id='arrow-menu'/>
+      <ArrowDownIcon id="arrow-menu" />
     </div>
-    
+
     <NavOptions />
 
     <div class="px-4 grid place-items-center border-l-[1px]">

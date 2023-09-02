@@ -5,16 +5,25 @@ import LinkedinIcon from '@icons/LindekinIcon.astro'
 import Name from '@components/hero-section/Name'
 ---
 
-<section class="w-full h-screen justify-center md:pt-0 overflow-hidden flex flex-col gap-5 md:gap-8 md:justify-center">
+<section
+  class="w-full h-screen justify-center md:pt-0 overflow-hidden flex flex-col gap-5 md:gap-8 md:justify-center"
+>
   <header class="pb-2 overflow-hidden relative h-32 md:h-auto">
-    <Name client:visible/>
+    <Name client:visible />
   </header>
 
   <div class="md:max-w-[50%]">
-    <p class="text-secondary-200 text-base font-normal leading-7 md:pr-10 md:text-lg">Y mi principal objetivo es utilizar la programación como un medio para crear maravillas duraderas.</p>
+    <p
+      class="text-secondary-200 text-base font-normal leading-7 md:pr-10 md:text-lg"
+    >
+      Y mi principal objetivo es utilizar la programación como un medio para
+      crear maravillas duraderas.
+    </p>
   </div>
 
-  <footer class="flex justify-center md:justify-normal gap-6 text-secondary-200 pb-2">
+  <footer
+    class="flex justify-center md:justify-normal gap-6 text-secondary-200 pb-2"
+  >
     <a href="https://github.com/VictorRodas99" class="social-icons">
       <GithubIcon />
     </a>
@@ -42,7 +51,7 @@ import Name from '@components/hero-section/Name'
     width: 0px;
     height: 5px;
     background-color: #fffdfdff;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
   .social-icons:hover::before {

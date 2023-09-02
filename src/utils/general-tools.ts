@@ -2,7 +2,11 @@
  * Normalizes a hexadecimal color code into an array of normalized RGB values
  */
 export const normalizeColor = (hexCode: number) => {
-  return [(hexCode >> 16 & 255) / 255, (hexCode >> 8 & 255) / 255, (255 & hexCode) / 255]
+  return [
+    ((hexCode >> 16) & 255) / 255,
+    ((hexCode >> 8) & 255) / 255,
+    (255 & hexCode) / 255
+  ]
 }
 
 export const getRandomNumberUp = (to: number) => Math.floor(Math.random() * to)
@@ -13,9 +17,7 @@ export function getMajorLength({ messages }: { messages: string[] }) {
   for (const message of messages) {
     const { length } = message
 
-    majorLength = length > majorLength
-      ? length
-      : majorLength
+    majorLength = length > majorLength ? length : majorLength
   }
 
   return majorLength

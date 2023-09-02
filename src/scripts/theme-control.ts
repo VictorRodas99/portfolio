@@ -29,14 +29,17 @@ const changeGradientMainColor = ({ theme }: { theme: 'dark' | 'light' }) => {
   }
 
   const canvasStyles = getComputedStyle(canvas)
-  const existsVariable = Boolean(canvasStyles.getPropertyValue(mainColorVariable))
+  const existsVariable = Boolean(
+    canvasStyles.getPropertyValue(mainColorVariable)
+  )
 
   if (!existsVariable) {
-    throw new Error(`CSS variable name ${mainColorVariable} does not exists in the canvas styles declarations`)
+    throw new Error(
+      `CSS variable name ${mainColorVariable} does not exists in the canvas styles declarations`
+    )
   }
 
   canvas.style.setProperty(mainColorVariable, colors[theme])
-  
 }
 
 export function setThemePrefrence() {
@@ -59,7 +62,6 @@ export function setThemePrefrence() {
     changeGradientMainColor({ theme: 'light' })
 
     document.documentElement.classList.remove('dark')
-
   }
 
   selectedOptionElement.ariaSelected = 'true'
