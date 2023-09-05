@@ -20,6 +20,9 @@
       ],
       "@client-scripts/*": [
         "src/scripts/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
       ]
     },
     "jsx": "react-jsx",
