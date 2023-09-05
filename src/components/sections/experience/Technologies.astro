@@ -1,10 +1,10 @@
 ---
-import BootstrapIcon from '@components/icons/skills/BootstrapIcon.astro'
-// import FirebaseIconDark from '@components/icons/skills/FirebaseIconDark.astro'
+import TechnologyCard from '@components/sections/experience/TechnologyCard.astro'
+
 import PostGreSQLIcon from '@components/icons/skills/PostGreSQLIcon.astro'
 import JavascriptIcon from '@components/icons/skills/JavascriptIcon.astro'
+import BootstrapIcon from '@components/icons/skills/BootstrapIcon.astro'
 import DjangoIcon from '@components/icons/skills/DjangoIcon.astro'
-import TechnologyCard from '@components/experience-section/TechnologyCard.astro'
 ---
 
 <div class="flex justify-center lg:justify-start lg:opacity-0 md:group-hover:opacity-100 gap-2 flex-wrap transition-opacity duration-300">
@@ -15,11 +15,6 @@ import TechnologyCard from '@components/experience-section/TechnologyCard.astro'
   <TechnologyCard name="Javascript" bgColor="#f0da4fa2">
     <JavascriptIcon size={25}/>
   </TechnologyCard>
-
-  <!-- <TechnologyCard name="Firebase" bgColor="#ffcc32a2">
-    TODO: apply icon based on theme
-    <FirebaseIconDark size={25}/>  
-  </TechnologyCard> -->
 
   <TechnologyCard name="PostgreSQL" bgColor="#336791a2">
     <PostGreSQLIcon theme='dark' size={25}/>              

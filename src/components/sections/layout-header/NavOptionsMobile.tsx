@@ -1,6 +1,6 @@
+import NavList from '@components/sections/layout-header/NavList.tsx'
 import ArrowDownIcon from '@components/icons/ArrowDownIcon'
 import CloseIcon from '@components/icons/CloseIcon.tsx'
-import NavList from '@components/layout-header/NavList.tsx'
 import { useRef } from 'react'
 
 // TODO: animate dialog

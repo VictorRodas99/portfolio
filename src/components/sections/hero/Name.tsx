@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect } from 'react'
 import { HeroAnimation } from '@client-scripts/animations'
 
 export default function HeroName() {

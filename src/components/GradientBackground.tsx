@@ -1,4 +1,5 @@
-import '../css/gradient-background.css'
+import '@css/gradient-background.css'
+
 import { Gradient } from '@client-scripts/gradient-background/gradient'
 import { useEffect } from 'react'
 
