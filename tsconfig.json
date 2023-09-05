@@ -23,6 +23,9 @@
       ],
       "@assets/*": [
         "src/assets/*"
+      ],
+      "@css/*": [
+        "src/css/*"
       ]
     },
     "jsx": "react-jsx",
