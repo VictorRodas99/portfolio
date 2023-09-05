@@ -1,0 +1,92 @@
+---
+import TechnologyCard from '@components/experience-section/TechnologyCard.astro'
+import ProjectCard from '@components/projects-section/ProjectCard.astro'
+import Title from '@components/Title.astro'
+
+import projectOneImageLight from '@assets/img/e-commerce-full-light.png'
+import projectTwoImageLight from '@assets/img/just-music-light.png'
+import projectTwoImageDark from '@assets/img/just-music-dark.png'
+import projectOneImage from '@assets/img/e-commerce-full.png'
+
+import CloudflareIcon from '@components/icons/skills/CloudflareIcon.astro'
+import PowershellIcon from '@components/icons/skills/PowershellIcon.astro'
+import NodejsIcon from '@components/icons/skills/NodejsIcon.astro'
+import ReactIcon from '@components/icons/skills/ReactIcon.astro'
+import BashIcon from '@components/icons/skills/BashIcon.astro'
+import CSSIcon from '@components/icons/skills/CSSIcon.astro'
+
+import projectsData from '@components/projects-section/projects-data'
+---
+
+<section class="flex flex-col gap-12 py-16 lg:pr-6">
+  <Title title="Proyectos" />
+
+  <article class="flex flex-col lg:flex-row gap-10">
+    <ProjectCard
+      darkImage={projectOneImage}
+      lightImage={projectOneImageLight}
+      projectName={projectsData.one.name}
+      projectDescription={projectsData.one.description}
+    >
+      <li>
+        <a href="https://react.dev/">
+          <TechnologyCard name="React" bgColor="#04c2e6">
+            <ReactIcon theme="dark" size={25} />
+          </TechnologyCard>
+        </a>
+      </li>
+      <li>
+        <a href="https://nodejs.org/en">
+          <TechnologyCard name="NodeJS" bgColor="#81cd39">
+            <NodejsIcon theme="dark" size={25} />
+          </TechnologyCard>
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+          <TechnologyCard name="CSS" bgColor="#53abd8">
+            <CSSIcon size={25} />
+          </TechnologyCard>
+        </a>
+      </li>
+      <li>
+        <a href="https://workers.cloudflare.com/">
+          <TechnologyCard name="Edge workers" bgColor="#f38020">
+            <CloudflareIcon theme="dark" size={25} />
+          </TechnologyCard>
+        </a>
+      </li>
+    </ProjectCard>
+
+    <ProjectCard
+      darkImage={projectTwoImageDark}
+      lightImage={projectTwoImageLight}
+      projectName={projectsData.two.name}
+      projectDescription={projectsData.two.description}
+    >
+      <li>
+        <a href="https://nodejs.org/en">
+          <TechnologyCard name="NodeJS" bgColor="#81cd39">
+            <NodejsIcon theme="dark" size={25} />
+          </TechnologyCard>
+        </a>
+      </li>
+      <li>
+        <a href="https://learn.microsoft.com/en-us/powershell/">
+          <TechnologyCard name="Powershell" bgColor="#4579d3">
+            <PowershellIcon size={25} />
+          </TechnologyCard>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#What-is-Bash_003f"
+        >
+          <TechnologyCard name="Bash" bgColor="#97d49e">
+            <BashIcon size={25} />
+          </TechnologyCard>
+        </a>
+      </li>
+    </ProjectCard>
+  </article>
+</section>
