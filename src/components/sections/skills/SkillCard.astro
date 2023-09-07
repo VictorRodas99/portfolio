@@ -1,0 +1,48 @@
+---
+interface Props {
+  name: string
+  description: string
+  iconColor?: `#${string}`
+}
+
+const { name, description, iconColor } = Astro.props
+---
+
+<!-- TODO: make a bg gradient for light theme -->
+<div
+  id="skill-card" class="group relative transition-all duration-300 flex flex-col gap-4 items-center justify-center min-h-[300px] p-4 border border-primary-100 rounded md:rounded-lg backdrop-blur-[2px] overflow-hidden"
+>
+  <div
+    class="group-hover:scale-90 group-hover:!text-primary-50 transition-transform duration-300"
+    style=`color: ${ iconColor ?? undefined }`
+  >
+    <slot name="icon" />
+  </div>
+
+  <div class="gap-4 flex flex-col items-center">
+    <h3 class="font-bold text-lg m-auto">{name}</h3>
+    <p class="text-center">{description}</p>
+  </div>
+</div>
+
+<style>
+  #skill-card::before {
+    content: '';
+    background-color: #ffffffc5;
+    width: 60%;
+    height: 100%;
+
+    left: -125%;
+    top: 0;
+
+    transform: skew(45deg);
+    position: absolute;
+    opacity: .2;
+
+    transition: all .3s ease-in-out;
+  }
+
+  #skill-card:hover::before {
+    left: 140%;
+  }
+</style>
