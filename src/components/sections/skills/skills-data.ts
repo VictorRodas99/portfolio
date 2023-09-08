@@ -1,23 +1,28 @@
-export default {  
+export default {
   react: {
     name: 'React',
-    description: 'Una librería de JavaScript para construir interfaces de usuario.'
+    description:
+      'Una librería de JavaScript para construir interfaces de usuario.'
   },
   astro: {
     name: 'Astro',
-    description: 'Un framework web todo en uno para crear páginas web rápidas y centradas en el contenido.'
+    description:
+      'Un framework web todo en uno para crear páginas web rápidas y centradas en el contenido.'
   },
   typescript: {
     name: 'TypeScript',
-    description: 'Un lenguaje de programación fuertemente tipado basado en JavaScript, que brinda mejores herramientas a cualquier escala.'
+    description:
+      'Un lenguaje de programación fuertemente tipado basado en JavaScript, que brinda mejores herramientas a cualquier escala.'
   },
   tailwind: {
     name: 'Tailwind',
-    description: 'Un framework de CSS diseñado para crear cualquier tipo de diseño directamente en el HTML.'
+    description:
+      'Un framework de CSS diseñado para crear cualquier tipo de diseño directamente en el HTML.'
   },
   bootstrap: {
     name: 'Bootstrap',
-    description: 'El framework de CSS más popular para crear sitios responsivos y orientados a dispositivos móviles.'
+    description:
+      'El framework de CSS más popular para crear sitios responsivos y orientados a dispositivos móviles.'
   },
   nodejs: {
     name: 'NodeJS',
@@ -29,10 +34,12 @@ export default {
   },
   python: {
     name: 'Python',
-    description: 'Un lenguaje de programación ampliamente utilizado en aplicaciones web y el desarrollo de software en general, debido a su eficiencia, versatilidad y capacidad de acelerar el desarrollo de software.'
+    description:
+      'Un lenguaje de programación ampliamente utilizado en aplicaciones web y el desarrollo de software en general, debido a su eficiencia, versatilidad y capacidad de acelerar el desarrollo de software.'
   },
   mysql: {
     name: 'MySLQ',
-    description: 'Sistema de gestión de base de datos relacionales basado en SQL.'
+    description:
+      'Sistema de gestión de base de datos relacionales basado en SQL.'
   }
 }

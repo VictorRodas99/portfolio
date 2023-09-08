@@ -10,7 +10,8 @@ const { name, description, iconColor } = Astro.props
 
 <!-- TODO: make a bg gradient for light theme -->
 <div
-  id="skill-card" class="group relative transition-all duration-300 flex flex-col gap-4 items-center justify-center min-h-[300px] p-4 border border-primary-100 rounded md:rounded-lg backdrop-blur-[2px] overflow-hidden dark:hover:bg-primary-100/5"
+  id="skill-card"
+  class="group relative transition-all duration-300 flex flex-col gap-4 items-center justify-center min-h-[300px] p-4 border border-primary-100 rounded md:rounded-lg backdrop-blur-[2px] overflow-hidden dark:hover:bg-primary-100/5"
 >
   <div
     class="group-hover:scale-90 group-hover:!text-primary-50 transition-transform duration-300"
@@ -37,9 +38,9 @@ const { name, description, iconColor } = Astro.props
 
     transform: skew(45deg);
     position: absolute;
-    opacity: .2;
+    opacity: 0.2;
 
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   #skill-card:hover::before {
