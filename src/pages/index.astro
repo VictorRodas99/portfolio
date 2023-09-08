@@ -1,25 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro'
 
-import ArrowDownIconXL from '@components/icons/ArrowDownIconXL.astro'
 import GradientBackground from '@components/GradientBackground'
 import LayoutHeader from '@components/LayoutHeader.astro'
 import HeroSection from '@components/HeroSection.astro'
+import ArrowButton from '@components/ArrowButton.astro'
 import Experience from '@components/Experience.astro'
 import Projects from '@components/Projects.astro'
-
-import Title from '@components/Title.astro'
-import ReactIcon from '@components/icons/skills/transparent/ReactIcon.astro'
-import AstroIcon from '@components/icons/skills/AstroIcon.astro'
-import TypeScriptIcon from '@components/icons/skills/transparent/TypeScriptIcon.astro'
-import TailwindIcon from '@components/icons/skills/transparent/TailwindIcon.astro'
-import BootstrapIcon from '@components/icons/skills/transparent/BootstrapIcon.astro'
-import ExpressIcon from '@components/icons/skills/transparent/ExpressIcon.astro'
-import NodejsIcon from '@components/icons/skills/transparent/NodejsIcon.astro'
-import PythonIcon from '@components/icons/skills/transparent/PythonIcon.astro'
-import MySQLIcon from '@components/icons/skills/transparent/MySQLIcon.astro'
-
-import SkillCard from '@components/sections/skills/SkillCard.astro'
+import Skills from '@components/Skills.astro'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -29,65 +17,13 @@ import SkillCard from '@components/sections/skills/SkillCard.astro'
   <section class="flex flex-col w-full gap-16">
     <HeroSection />
 
-    <button
-      id="arrow-btn"
-      type="button"
-      class="text-primary-700 dark:text-primary-200 left-[45%] md:left-[50%] absolute bottom-2 md:bottom-10 animate-bounce hover:text-primary-500 transition-colors"
-    >
-      <ArrowDownIconXL />
-    </button>
+    <ArrowButton />
 
     <Experience />
     <Projects />
-
-    <section class="flex flex-col gap-12">
-      <!-- Skills: React, Astro, Express, TypeScript, Tailwind, Bootstrap, Python, NodeJS, MySQL -->
-      <!-- Tools: Git, Bash, Powershell, Postman -->
-
-      <Title title='Habilidades y Herramientas'/>
-
-      <article class="grid md:grid-cols-3 gap-4 md:px-10">
-        <SkillCard name='React' description='Una librería de JavaScript para construir interfaces de usuario.' iconColor='#61DAFB'>
-          <ReactIcon size={90} slot='icon' color='currentColor'/>       
-        </SkillCard>
-
-        <SkillCard name='Astro' description='Un framework web todo en uno para crear páginas web rápidas y centradas en el contenido.'>
-          <AstroIcon size={90} slot='icon' color='currentColor'/>
-        </SkillCard>
-
-        <SkillCard name='TypeScript' description='Un lenguaje de programación fuertemente tipado basado en JavaScript, que brinda mejores herramientas a cualquier escala.'>
-          <TypeScriptIcon size={90} slot='icon' color='auto'/>
-        </SkillCard>
-
-        <SkillCard name='Tailwind' description='Un framework de CSS diseñado para crear cualquier tipo de diseño directamente en el HTML.'>
-          <TailwindIcon size={90} slot='icon'/>
-        </SkillCard>
-
-        <SkillCard name='Bootstrap' description='El framework de CSS más popular para crear sitios responsivos y orientados a dispositivos móviles.'>
-          <BootstrapIcon size={90} slot='icon'/>
-        </SkillCard>
-
-        <SkillCard name='NodeJS' description='Un entorno de ejecución para JavaScript.'>
-          <NodejsIcon size={90} slot='icon'/>
-        </SkillCard>
-
-        <SkillCard name='Express' description='Un framework web customizable y rápido para NodeJS.'>
-          <ExpressIcon size={90} slot='icon'/>
-        </SkillCard>
-
-        <SkillCard name='Python' description='Un lenguaje de programación ampliamente utilizado en aplicaciones web y el desarrollo de software en general, debido a su eficiencia, versatilidad y capacidad de acelerar el desarrollo de software.'>
-          <PythonIcon size={90} slot='icon'/>
-        </SkillCard>
-
-        <SkillCard name='MySLQ' description='Sistema de gestión de base de datos relacionales basado en SQL.'>
-          <MySQLIcon size={90} slot='icon'/>
-        </SkillCard>
-      </article>
-    </section>
+    <Skills />
   </section>
 </Layout>
-
-<script src="@client-scripts/arrow-button"></script>
 
 <script>
   import { setThemePrefrence } from '@client-scripts/theme-control'
