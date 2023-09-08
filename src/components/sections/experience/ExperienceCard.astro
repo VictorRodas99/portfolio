@@ -8,13 +8,15 @@ interface Props {
 const { title } = Astro.props
 ---
 
-<div class="group flex flex-col gap-4 flex-grow lg:w-[25%] p-4 md:p-8 lg:p-4 border border-primary-100 rounded-lg relative hover:border-primary-500 transition-all">
-  <slot name="effects"/>
+<div
+  class="group flex flex-col gap-4 flex-grow lg:w-[25%] p-4 md:p-8 lg:p-4 border border-primary-100 rounded-lg relative hover:border-primary-500 transition-all"
+>
+  <slot name="effects" />
 
   <header class="flex gap-3 items-center">
     <HammerIcon />
     <h4 class="font-bold text-lg">{title}</h4>
-    <slot name="responsive-info"/>
+    <slot name="responsive-info" />
   </header>
 
   <slot />

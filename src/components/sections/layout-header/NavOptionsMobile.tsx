@@ -25,11 +25,15 @@ export default function NavOptionsMobile() {
         id="mobile-menu-trigger"
         className="px-3 p-2 flex gap-1 justify-center items-center sm:hidden"
       >
-        Menú  
-        <ArrowDownIcon id="arrow-menu" ref={arrowIcon} /> 
+        Menú
+        <ArrowDownIcon id="arrow-menu" ref={arrowIcon} />
       </button>
 
-      <dialog id="nav-options-mobile" ref={navOptionsDialog} className=" bg-primary-200 dark:bg-secondary-100 dark:text-primary-100 rounded-xl border-[1px] w-full p-7">
+      <dialog
+        id="nav-options-mobile"
+        ref={navOptionsDialog}
+        className=" bg-primary-200 dark:bg-secondary-100 dark:text-primary-100 rounded-xl border-[1px] w-full p-7"
+      >
         <header className="flex justify-between mb-10">
           <h2>Navegación</h2>
           <button onClick={closeBtnClickHandler} id="nav-options__close-btn">

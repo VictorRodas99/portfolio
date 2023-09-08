@@ -10,21 +10,23 @@ import PostmanIcon from '@icons/skills/PostmanIcon.astro'
 ---
 
 <section class="flex flex-col gap-12">
-  <Title title='Habilidades y Herramientas'/>
+  <Title title="Habilidades y Herramientas" />
   <Cards />
 
-  <article class="min-w-min self-center grid grid-cols-2 lg:grid-cols-4 gap-8 place-items-center px-6">
-    <ToolCard tool='Git'>
-      <GitIcon size={50} slot="icon"/>
+  <article
+    class="min-w-min self-center grid grid-cols-2 lg:grid-cols-4 gap-8 place-items-center px-6"
+  >
+    <ToolCard tool="Git">
+      <GitIcon size={50} slot="icon" />
     </ToolCard>
     <ToolCard tool="Bash">
-      <BashIcon size={50} slot="icon"/>
+      <BashIcon size={50} slot="icon" />
     </ToolCard>
     <ToolCard tool="Powershell">
-      <PowershellIcon size={50} slot="icon"/>
+      <PowershellIcon size={50} slot="icon" />
     </ToolCard>
     <ToolCard tool="Postman">
-      <PostmanIcon size={50} slot="icon"/>
+      <PostmanIcon size={50} slot="icon" />
     </ToolCard>
   </article>
 </section>

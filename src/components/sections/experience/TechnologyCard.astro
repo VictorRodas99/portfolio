@@ -2,13 +2,24 @@
 interface Props {
   name: string
   bgColor: `#${string}`
-  minWidth?: `${number}${'px' | 'rem' | 'em' | '%' | 'vw' | 'vh' | 'vmin' | 'vmax'}`
+  minWidth?: `${number}${
+    | 'px'
+    | 'rem'
+    | 'em'
+    | '%'
+    | 'vw'
+    | 'vh'
+    | 'vmin'
+    | 'vmax'}`
 }
 
 const { name, bgColor, minWidth } = Astro.props
 ---
 
-<div class="text-primary-100 w-auto lg:min-w-[125px] flex gap-2 items-center p-2 rounded-lg select-none" style={{ backgroundColor: bgColor, minWidth: minWidth ?? 'auto' }}>
-  <slot/>
+<div
+  class="text-primary-100 w-auto lg:min-w-[125px] flex gap-2 items-center p-2 rounded-lg select-none"
+  style={{ backgroundColor: bgColor, minWidth: minWidth ?? 'auto' }}
+>
+  <slot />
   <span class="hidden md:block text-sm">{name}</span>
 </div>
