@@ -1,0 +1,56 @@
+---
+import SkillCard from '@components/sections/skills/SkillCard.astro'
+
+import TypeScriptIcon from '@components/icons/skills/transparent/TypeScriptIcon.astro'
+import BootstrapIcon from '@components/icons/skills/transparent/BootstrapIcon.astro'
+import TailwindIcon from '@components/icons/skills/transparent/TailwindIcon.astro'
+import ExpressIcon from '@components/icons/skills/transparent/ExpressIcon.astro'
+import NodejsIcon from '@components/icons/skills/transparent/NodejsIcon.astro'
+import PythonIcon from '@components/icons/skills/transparent/PythonIcon.astro'
+import ReactIcon from '@components/icons/skills/transparent/ReactIcon.astro'
+import MySQLIcon from '@components/icons/skills/transparent/MySQLIcon.astro'
+import AstroIcon from '@components/icons/skills/AstroIcon.astro'
+
+import skillsData from './skills-data'
+---
+
+<!-- Skills: React, Astro, Express, TypeScript, Tailwind, Bootstrap, Python, NodeJS, MySQL -->
+<!-- Tools: Git, Bash, Powershell, Postman -->
+
+<article class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:px-10">
+  <SkillCard name={skillsData.react.name} description={skillsData.react.description} iconColor='#61DAFB'>
+    <ReactIcon size={90} slot='icon' color='currentColor'/>       
+  </SkillCard>
+
+  <SkillCard name={skillsData.astro.name} description={skillsData.astro.description}>
+    <AstroIcon size={90} slot='icon' color='currentColor'/>
+  </SkillCard>
+
+  <SkillCard name={skillsData.typescript.name} description={skillsData.typescript.description}>
+    <TypeScriptIcon size={90} slot='icon' color='auto'/>
+  </SkillCard>
+
+  <SkillCard name={skillsData.tailwind.name} description={skillsData.tailwind.description}>
+    <TailwindIcon size={90} slot='icon'/>
+  </SkillCard>
+
+  <SkillCard name={skillsData.bootstrap.name} description={skillsData.bootstrap.description}>
+    <BootstrapIcon size={90} slot='icon'/>
+  </SkillCard>
+
+  <SkillCard name={skillsData.nodejs.name} description={skillsData.nodejs.description}>
+    <NodejsIcon size={90} slot='icon'/>
+  </SkillCard>
+
+  <SkillCard name={skillsData.express.name} description={skillsData.express.description}>
+    <ExpressIcon size={90} slot='icon'/>
+  </SkillCard>
+
+  <SkillCard name={skillsData.python.name} description={skillsData.python.description}>
+    <PythonIcon size={90} slot='icon'/>
+  </SkillCard>
+
+  <SkillCard name={skillsData.mysql.name} description={skillsData.mysql.description}>
+    <MySQLIcon size={90} slot='icon'/>
+  </SkillCard>
+</article>
