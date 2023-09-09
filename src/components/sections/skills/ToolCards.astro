@@ -1,0 +1,25 @@
+---
+import ToolCard from '@components/sections/skills/ToolCard.astro'
+
+import BashIcon from '@icons/skills/transparent/BashIcon.astro'
+import PowershellIcon from '@icons/skills/PowershellIcon.astro'
+import GitIcon from '@icons/skills/transparent/GitIcon.astro'
+import PostmanIcon from '@icons/skills/PostmanIcon.astro'
+---
+
+<article
+    class="min-w-min self-center grid grid-cols-2 lg:grid-cols-4 gap-8 place-items-center px-6"
+>
+  <ToolCard tool="Git" navigateTo='https://git-scm.com/'>
+    <GitIcon size={50} slot="icon" />
+  </ToolCard>
+  <ToolCard tool="Bash" navigateTo='https://www.gnu.org/software/bash/'>
+    <BashIcon size={50} slot="icon" />
+  </ToolCard>
+  <ToolCard tool="Powershell" navigateTo='https://learn.microsoft.com/en-us/powershell/'>
+    <PowershellIcon size={50} slot="icon" />
+  </ToolCard>
+  <ToolCard tool="Postman" navigateTo='https://www.postman.com/'>
+    <PostmanIcon size={50} slot="icon" />
+  </ToolCard>
+</article>
