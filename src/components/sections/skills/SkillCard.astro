@@ -3,13 +3,17 @@ interface Props {
   name: string
   description: string
   iconColor?: `#${string}`
+  navigateTo?: string
 }
 
-const { name, description, iconColor } = Astro.props
+const { name, description, iconColor, navigateTo } = Astro.props
 ---
 
 <!-- TODO: make a bg gradient for light theme -->
-<div
+<a
+  href={navigateTo ?? '#'}
+  title={name}
+  target="_blank"
   id="skill-card"
   class="group relative transition-all duration-300 flex flex-col gap-4 items-center justify-center min-h-[300px] p-4 border border-primary-100 rounded md:rounded-lg backdrop-blur-[2px] overflow-hidden dark:hover:bg-primary-100/5"
 >
@@ -24,7 +28,7 @@ const { name, description, iconColor } = Astro.props
     <h3 class="font-bold text-lg m-auto">{name}</h3>
     <p class="text-center">{description}</p>
   </div>
-</div>
+</a>
 
 <style>
   #skill-card::before {
