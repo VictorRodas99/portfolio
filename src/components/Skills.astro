@@ -1,32 +1,11 @@
 ---
-import ToolCard from '@components/sections/skills/ToolCard.astro'
+import ToolCards from '@components/sections/skills/ToolCards.astro'
 import Cards from '@components/sections/skills/Cards.astro'
 import Title from '@components/Title.astro'
-
-import BashIcon from '@icons/skills/transparent/BashIcon.astro'
-import PowershellIcon from '@icons/skills/PowershellIcon.astro'
-import GitIcon from '@icons/skills/transparent/GitIcon.astro'
-import PostmanIcon from '@icons/skills/PostmanIcon.astro'
 ---
 
 <section class="flex flex-col gap-12">
   <Title title="Habilidades y Herramientas" />
   <Cards />
-
-  <article
-    class="min-w-min self-center grid grid-cols-2 lg:grid-cols-4 gap-8 place-items-center px-6"
-  >
-    <ToolCard tool="Git">
-      <GitIcon size={50} slot="icon" />
-    </ToolCard>
-    <ToolCard tool="Bash">
-      <BashIcon size={50} slot="icon" />
-    </ToolCard>
-    <ToolCard tool="Powershell">
-      <PowershellIcon size={50} slot="icon" />
-    </ToolCard>
-    <ToolCard tool="Postman">
-      <PostmanIcon size={50} slot="icon" />
-    </ToolCard>
-  </article>
+  <ToolCards />
 </section>
