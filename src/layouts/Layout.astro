@@ -1,4 +1,6 @@
 ---
+import Footer from '@layouts/LayoutFooter.astro'
+
 interface Props {
   title: string
 }
@@ -20,8 +22,14 @@ const { title } = Astro.props
     <main class="py-8 px-6 md:px-12 lg:px-16 min-h-screen min-w-full">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
+
+<script>
+  import { setThemePrefrence } from '@client-scripts/theme-control'
+  window.addEventListener('load', setThemePrefrence)
+</script>
 
 <style is:global>
   /* Temporal */
