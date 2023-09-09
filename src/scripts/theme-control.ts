@@ -50,7 +50,7 @@ export function setThemePrefrence() {
     selectedOptionElement = document.querySelector('#theme-dialog>li#dark')
 
     document.documentElement.classList.add('dark')
-    changeGradientMainColor({ theme: 'dark' })
+    // changeGradientMainColor({ theme: 'dark' })
   } else {
     selectedOptionElement = document.querySelector('#theme-dialog>li#light')
 
@@ -59,7 +59,7 @@ export function setThemePrefrence() {
       '#theme-dialog>li#light>svg'
     )
     changeThemeButtonIcon(sunSvg)
-    changeGradientMainColor({ theme: 'light' })
+    // changeGradientMainColor({ theme: 'light' })
 
     document.documentElement.classList.remove('dark')
   }
