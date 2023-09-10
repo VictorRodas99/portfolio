@@ -57,7 +57,6 @@ export default function AwesomeCard({ flavor }: CardProps) {
     >
       <div
         className="relative w-full h-full overflow-hidden rounded-2xl"
-        data-atropos-offset="-5"
       >
         <div className="absolute h-full">
           <BackgroundPattern />
@@ -68,7 +67,6 @@ export default function AwesomeCard({ flavor }: CardProps) {
         className={
           'absolute top-0 z-10 overflow-hidden opacity-70 h-full rounded-2xl flex items-end'
         }
-        data-atropos-offset="0"
       >
         <figure>
           <flavor.component className="w-full h-full" />
