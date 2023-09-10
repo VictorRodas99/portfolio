@@ -41,7 +41,7 @@ export default function NavOptionsMobile() {
           </button>
         </header>
         <ul className="flex flex-col gap-5 [&>li]:border-b-[1px] dark:[&>li]:border-secondary-50 [&>li]:pb-3">
-          <NavList />
+          <NavList closeDialog={closeBtnClickHandler} />
         </ul>
       </dialog>
     </>
