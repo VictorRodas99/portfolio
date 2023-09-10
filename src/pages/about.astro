@@ -1,12 +1,14 @@
 ---
 import Layout from '@layouts/Layout.astro'
+
 import AwesomeCardContainer from '@components/sections/about/CardContainer'
-import GithubIcon from '@components/icons/GithubIcon.astro'
+
 import LindekinIcon from '@components/icons/LindekinIcon.astro'
+import GithubIcon from '@components/icons/GithubIcon.astro'
 import MailIcon from '@components/icons/MailIcon.astro'
 ---
 
-<Layout title='Acerca de mí'>
+<Layout title="Acerca de mí">
   <section class="mt-20 flex flex-col gap-12 lg:px-36 justify-center">
     <div class="flex flex-col m-auto md:m-0 gap-2 md:w-[320px]">
       <h1 class="font-bold text-4xl md:text-5xl">Acerca de mí</h1>
@@ -21,31 +23,61 @@ import MailIcon from '@components/icons/MailIcon.astro'
         </div>
 
         <div class="flex flex-col gap-4 leading-7">
-          <p>Diariamente me dedico a investigar y llevar a cabo proyectos relacionados con la programación. Esto incluye aplicaciones orientadas principalmente al desarrollo de mis habilidades en el Frontend, así como otros experimentos relacionados con el sistema a nivel más bajo o el Backend.</p>
+          <p>
+            Diariamente me dedico a investigar y llevar a cabo proyectos
+            relacionados con la programación. Esto incluye aplicaciones
+            orientadas principalmente al desarrollo de mis habilidades en el
+            Frontend, así como otros experimentos relacionados con el sistema a
+            nivel más bajo o el Backend.
+          </p>
 
-          <p>Desde una edad temprana, me ha apasionado la idea de crear cosas desde cero y entender su funcionamiento. He encontrado en la programación una forma gratificante de seguir esa pasión y el deseo de crear cosas.</p>
+          <p>
+            Desde una edad temprana, me ha apasionado la idea de crear cosas
+            desde cero y entender su funcionamiento. He encontrado en la
+            programación una forma gratificante de seguir esa pasión y el deseo
+            de crear cosas.
+          </p>
 
-          <p>Me gusta ver la programación y la creación de software como un mundo complejo pero interesante hecho de piezas de lego, donde cada pieza es fundamental para el funcionamiento del conjunto; donde estas piezas al ser ensambladas reflejen el por qué amo la creación de las cosas.</p>
-        </div> 
+          <p>
+            Me gusta ver la programación y la creación de software como un mundo
+            complejo pero interesante hecho de piezas de lego, donde cada pieza
+            es fundamental para el funcionamiento del conjunto; donde estas
+            piezas al ser ensambladas reflejen el por qué amo la creación de las
+            cosas.
+          </p>
+        </div>
       </div>
 
-      <div class="flex flex-col justify-center items-center gap-6 md:w-[40%] md:p-6">
-        <AwesomeCardContainer client:only="react"/>
-        <ul class="text-sm flex flex-row md:flex-col gap-4 [&>li]:transition-colors">
+      <div
+        class="flex flex-col justify-center items-center gap-6 md:w-[40%] md:p-6"
+      >
+        <AwesomeCardContainer client:only="react" />
+        <ul
+          class="text-sm flex flex-row md:flex-col gap-4 [&>li]:transition-colors"
+        >
           <li class="hover:text-primary-400">
-            <a class="flex items-center gap-4" href="https://github.com/VictorRodas99">
+            <a
+              class="flex items-center gap-4"
+              href="https://github.com/VictorRodas99"
+            >
               <GithubIcon size={30} />
               <p class="hidden md:block">Sígueme en Github</p>
             </a>
           </li>
           <li class="hover:text-primary-400">
-            <a class="flex items-center gap-4" href="https://www.linkedin.com/in/victor-rodas-dev">
+            <a
+              class="flex items-center gap-4"
+              href="https://www.linkedin.com/in/victor-rodas-dev"
+            >
               <LindekinIcon size={30} />
               <p class="hidden md:block">Sígueme en LinkedIn</p>
             </a>
           </li>
           <li class="hover:text-primary-400">
-            <a class="flex items-center gap-4" href="mailto:victormrodas99@gmail.com">
+            <a
+              class="flex items-center gap-4"
+              href="mailto:victormrodas99@gmail.com"
+            >
               <MailIcon size={30} />
               <p class="hidden md:block">victormrodas99@gmail.com</p>
             </a>

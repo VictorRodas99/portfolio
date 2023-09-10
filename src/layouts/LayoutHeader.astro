@@ -57,9 +57,11 @@ import MoonIcon from '@icons/MoonIcon.astro'
 <script>
   import { notification } from '@utils/development-notification'
 
-  const languageButton = document.querySelector('#language-btn') as HTMLButtonElement
+  const languageButton = document.querySelector(
+    '#language-btn'
+  ) as HTMLButtonElement
 
-  if(!languageButton) {
+  if (!languageButton) {
     throw new Error('#language-btn does not exists')
   }
 
