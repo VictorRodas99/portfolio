@@ -8,9 +8,8 @@ export const notification = Toastify({
     gravity: 'bottom',
     style: {
       font: 'bold',
-      background: 'transparent',
-      border: '1px solid #7770ff',
-      color: '#7770ff'
+      background: '#f8e91d',
+      color: '#000'
     }
   }
 )
