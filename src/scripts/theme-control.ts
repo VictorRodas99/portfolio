@@ -84,7 +84,7 @@ export function manualHandler(trigger: HTMLElement) {
       localStorage.setItem('theme', 'dark')
 
       document.documentElement.classList.add('dark')
-      changeGradientMainColor({ theme: 'dark' })
+      // changeGradientMainColor({ theme: 'dark' })
 
       break
     }
@@ -93,7 +93,7 @@ export function manualHandler(trigger: HTMLElement) {
       localStorage.setItem('theme', 'light')
 
       document.documentElement.classList.remove('dark')
-      changeGradientMainColor({ theme: 'light' })
+      // changeGradientMainColor({ theme: 'light' })
 
       break
     }
@@ -103,11 +103,11 @@ export function manualHandler(trigger: HTMLElement) {
 
       if (systemPreferenceIsDark()) {
         document.documentElement.classList.add('dark')
-        changeGradientMainColor({ theme: 'dark' })
+        // changeGradientMainColor({ theme: 'dark' })
         break
       }
 
-      changeGradientMainColor({ theme: 'light' })
+      // changeGradientMainColor({ theme: 'light' })
 
       break
     }
