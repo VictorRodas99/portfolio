@@ -1,6 +1,10 @@
+---
+import Author from '@components/sections/layout-footer/Author.astro'
+---
+
 <footer class="mt-20 py-8 px-6 md:px-12 lg:px-16">
   <div class="flex flex-col px-5 pb-5 pt-10 md:p-10 gap-10 md:flex-row items-center justify-between border-t border-secondary-50">
-      <ul class="flex gap-4 [&>li]:text-sm md:[&>li]:text-base [&>li]:transition-colors">
+    <ul class="flex gap-4 [&>li]:text-sm md:[&>li]:text-base [&>li]:transition-colors">
       <li class="hover:text-primary-400">
         <a href="/about">Acerca de</a>
       </li>
@@ -11,31 +15,6 @@
         <a href="#">Contacto</a>
       </li> 
     </ul>
-
-    <div class="font-bold">
-      <p class="flex gap-flex gap-2">&reg; 2023
-        <a id="author" href="https://github.com/VictorRodas99">Victor Rodas.</a>
-      </p>
-    </div>
+    <Author />
   </div>
 </footer>
-
-<style>
-  #author {
-    transition: all 1s ease-in-out;
-  }
-</style>
-
-<script>
-  import { getRandomRGB } from '@utils/general-tools'
-
-  const myName = document.querySelector('footer #author') as HTMLAnchorElement
-
-  if (!myName) {
-    throw new Error('#author element does not exists in footer')
-  }
-  
-  setInterval(() => {
-    myName.style.color = getRandomRGB()
-  }, 1000)
-</script>
