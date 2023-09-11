@@ -4,19 +4,23 @@ import Technologies from '@components/sections/experience/Technologies.astro'
 import Gradient from '@components/sections/experience/Gradient.astro'
 import BloodIcon from '@components/icons/BloodIcon.astro'
 import Title from '@components/Title.astro'
+
+import { getEntry } from 'astro:content'
+
+const { data: content } = await getEntry('experience', Astro.params.lang)
 ---
 
 <section class="flex flex-col gap-12">
-  <Title id="experience-section-title" title="Experiencia" />
+  <Title id="experience-section-title" title={content.title} />
 
   <article class="flex flex-col lg:flex-row gap-7 overflow-hidden">
-    <ExperienceCard title="Experiencia laboral">
+    <ExperienceCard title={content.cards.titleOne}>
       <Gradient slot="effects" />
       <p
         class="hidden lg:block opacity-70 flex-grow text-end"
         slot="responsive-info"
       >
-        Feb 2022 - Ag 2022
+        {content.experiences.first.date}
       </p>
 
       <div
@@ -25,11 +29,13 @@ import Title from '@components/Title.astro'
         <BloodIcon />
 
         <div class="flex flex-col gap-2">
-          <h5 class="font-bold text-xl">Sistema de gestión de hemoderivados</h5>
+          <h5 class="font-bold text-xl">{content.experiences.first.project}</h5>
           <p class="text-[12px] lg:text-sm md:text-lg text-secondary-200">
-            Desarollador Front-end
+            {content.experiences.first.position}
           </p>
-          <p class="opacity-50 leading-7 lg:hidden">Feb 2022 - Ag 2022</p>
+          <p class="opacity-50 leading-7 lg:hidden">
+            {content.experiences.first.date}
+          </p>
           <p class="italic opacity-50">Freelance</p>
         </div>
       </div>
@@ -38,38 +44,29 @@ import Title from '@components/Title.astro'
         class="flex flex-col gap-4 lg:translate-y-5 transition-transform duration-500 group-hover:translate-y-0"
       >
         <p class="text-base">
-          Fui el principal desarrollador del frontend en un proyecto innovador
-          para una empresa de hemoderivados. Diseñé y construí la interfaz que
-          permitió gestionar de manera eficiente el inventario de heladeras. Mi
-          enfoque se centró en crear una experiencia de usuario intuitiva y
-          amigable.
+          {content.experiences.first.description}
         </p>
         <Technologies />
       </div>
     </ExperienceCard>
 
-    <ExperienceCard title="Responsabilidades">
+    <ExperienceCard title={content.cards.titleTwo}>
       <div class="flex flex-col gap-2 text-center mt-4">
-        <h5 class="font-bold text-xl">Sistema de gestión de hemoderivados</h5>
+        <h5 class="font-bold text-xl">{content.experiences.first.project}</h5>
         <p class="text-sm md:text-lg text-secondary-200">
-          Desarollador Front-end
+          {content.experiences.first.position}
         </p>
       </div>
 
       <ul class="text-sm list-disc p-4 flex flex-col gap-4">
         <li>
-          Desarollar y mantener el Front-End de los diferentes endpoints del
-          sistema
+          {content.experiences.first.responsibilities.one}
         </li>
         <li>
-          Colaboré estrechamente con el equipo para integrar el sistema con una
-          base de datos en la nube, lo que permitió el acceso en tiempo real a
-          los datos cruciales desde distintos dispositivos.
+          {content.experiences.first.responsibilities.two}
         </li>
         <li>
-          Aseguré que la interfaz fuera funcional y accesible en diferentes
-          dispositivos, incluyendo computadoras y teléfonos móviles, para una
-          gestión flexible desde cualquier ubicación.
+          {content.experiences.first.responsibilities.three}
         </li>
       </ul>
     </ExperienceCard>

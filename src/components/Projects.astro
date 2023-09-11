@@ -16,17 +16,21 @@ import BashIcon from '@components/icons/skills/BashIcon.astro'
 import CSSIcon from '@components/icons/skills/CSSIcon.astro'
 
 import projectsData from '@components/sections/projects/projects-data'
+
+import { getEntry } from 'astro:content'
+
+const { data: content } = await getEntry('projects', Astro.params.lang)
 ---
 
 <section class="flex flex-col gap-12 py-16 lg:pr-6">
-  <Title id="projects" title="Proyectos" />
+  <Title id="projects" title={content.title} />
 
   <article class="flex flex-col lg:flex-row gap-10">
     <ProjectCard
       darkImage={projectOneImage}
       lightImage={projectOneImageLight}
       projectName={projectsData.one.name}
-      projectDescription={projectsData.one.description}
+      projectDescription={content.one.description}
       repoUrl={projectsData.one.repo}
     >
       <li>
@@ -63,7 +67,7 @@ import projectsData from '@components/sections/projects/projects-data'
       darkImage={projectTwoImageDark}
       lightImage={projectTwoImageLight}
       projectName={projectsData.two.name}
-      projectDescription={projectsData.two.description}
+      projectDescription={content.two.description}
       repoUrl={projectsData.two.repo}
     >
       <li>

@@ -4,21 +4,25 @@ import Name from '@components/sections/hero/Name'
 import LinkedinIcon from '@icons/LindekinIcon.astro'
 import GithubIcon from '@icons/GithubIcon.astro'
 import MailIcon from '@icons/MailIcon.astro'
+
+import { getEntry } from 'astro:content'
+
+const { lang } = Astro.params
+const content = await getEntry('hero', lang)
 ---
 
 <section
   class="w-full h-screen justify-center md:pt-0 overflow-hidden flex flex-col gap-5 md:gap-8 md:justify-center"
 >
   <header class="pb-2 overflow-hidden relative h-32 md:h-auto">
-    <Name client:visible />
+    <Name prefix={content.data.prefix} client:visible />
   </header>
 
   <div class="md:max-w-[50%]">
     <p
       class="text-secondary-200 text-base font-normal leading-7 md:pr-10 md:text-lg"
     >
-      Y mi principal objetivo es utilizar la programación como un medio para
-      crear maravillas duraderas.
+      {content.data.description}
     </p>
   </div>
 

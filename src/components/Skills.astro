@@ -2,10 +2,14 @@
 import ToolCards from '@components/sections/skills/ToolCards.astro'
 import Cards from '@components/sections/skills/Cards.astro'
 import Title from '@components/Title.astro'
+
+import { getEntry } from 'astro:content'
+
+const { data } = await getEntry('skills', Astro.params.lang)
 ---
 
 <section class="flex flex-col gap-12">
-  <Title title="Habilidades y Herramientas" />
+  <Title title={data.title} />
   <Cards />
   <ToolCards />
 </section>

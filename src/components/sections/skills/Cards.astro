@@ -11,10 +11,15 @@ import ReactIcon from '@components/icons/skills/transparent/ReactIcon.astro'
 import MySQLIcon from '@components/icons/skills/transparent/MySQLIcon.astro'
 import AstroIcon from '@components/icons/skills/AstroIcon.astro'
 
-import skillsData from './skills-data'
+import { getEntry } from 'astro:content'
+
+const { data } = await getEntry('skills', Astro.params.lang)
+const { skills: skillsData } = data
 ---
 
-<!-- Skills: React, Astro, Express, TypeScript, Tailwind, Bootstrap, Python, NodeJS, MySQL --><!-- Tools: Git, Bash, Powershell, Postman -->
+<!-- Skills: React, Astro, Express, TypeScript, Tailwind, Bootstrap, Python, NodeJS, MySQL -->
+<!-- Tools: Git, Bash, Powershell, Postman -->
+
 <article class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:px-10">
   <SkillCard
     name={skillsData.react.name}
