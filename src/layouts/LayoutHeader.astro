@@ -1,8 +1,8 @@
 ---
 import ThemeOptions from '@components/sections/layout-header/ThemeOptions.astro'
 import NavOptions from '@components/sections/layout-header/NavOptions.astro'
+import LanguageSwitcher from '@components/sections/layout-header/LanguageSwitcher.astro'
 
-import LanguagesIcon from '@icons/LanguagesIcon.astro'
 import MoonIcon from '@icons/MoonIcon.astro'
 ---
 
@@ -24,17 +24,7 @@ import MoonIcon from '@icons/MoonIcon.astro'
     </div>
 
     <ThemeOptions />
-
-    <div class="hidden px-4 sm:grid place-items-center border-l-[1px]">
-      <button
-        id="language-btn"
-        class="text-primary-400 dark:text-primary-50 header-button"
-        type="button"
-        aria-label="language selector trigger"
-      >
-        <LanguagesIcon />
-      </button>
-    </div>
+    <LanguageSwitcher />
   </nav>
 </header>
 
@@ -53,22 +43,6 @@ import MoonIcon from '@icons/MoonIcon.astro'
     }
   }
 </style>
-
-<script>
-  import { notification } from '@utils/development-notification'
-
-  const languageButton = document.querySelector(
-    '#language-btn'
-  ) as HTMLButtonElement
-
-  if (!languageButton) {
-    throw new Error('#language-btn does not exists')
-  }
-
-  languageButton.addEventListener('click', () => {
-    notification.showToast()
-  })
-</script>
 
 <script>
   import { animateButtons } from '@client-scripts/animations'
