@@ -6,44 +6,55 @@ import AwesomeCardContainer from '@components/sections/about/CardContainer'
 import LindekinIcon from '@components/icons/LindekinIcon.astro'
 import GithubIcon from '@components/icons/GithubIcon.astro'
 import MailIcon from '@components/icons/MailIcon.astro'
+
+import { getCollection } from 'astro:content'
+
+interface Props {
+  content: Awaited<ReturnType<typeof getCollection<'about'>>>[number]
+}
+
+export async function getStaticPaths() {
+  const pages = await getCollection('about')
+
+  const paths = pages.map((page) => {
+    return {
+      params: { lang: page.id },
+      props: { content: page }
+    }
+  })
+
+  return paths
+}
+
+const { lang } = Astro.params
+const { content } = Astro.props
 ---
 
-<Layout title="Acerca de mí">
+<Layout title={content.data.siteTitle} lang={lang}>
   <section class="mt-20 flex flex-col gap-12 lg:px-36 justify-center">
     <div class="flex flex-col m-auto md:m-0 gap-2 md:w-[320px]">
-      <h1 class="font-bold text-4xl md:text-5xl">Acerca de mí</h1>
+      <h1 class="font-bold text-4xl md:text-5xl">{content.data.title}</h1>
       <span id="underline" class="h-2 bg-primary-500 rounded m-auto"></span>
     </div>
 
     <section class="flex flex-col-reverse md:flex-row gap-10 lg:gap-40">
       <div class="flex flex-col gap-6 md:w-[60%]">
         <div class="flex flex-col gap-4">
-          <h2 class="font-bold text-3xl md:text-4xl">Soy Víctor Rodas</h2>
+          <h2 class="font-bold text-3xl md:text-4xl">{content.data.name} Víctor Rodas</h2>
           <h4 class="font-bold italic text-xl md:text-3xl">Web Developer</h4>
         </div>
 
         <div class="flex flex-col gap-4 leading-7">
           <p>
-            Diariamente me dedico a investigar y llevar a cabo proyectos
-            relacionados con la programación. Esto incluye aplicaciones
-            orientadas principalmente al desarrollo de mis habilidades en el
-            Frontend, así como otros experimentos relacionados con el sistema a
-            nivel más bajo o el Backend.
+            {content.data.description.paragraphOne}
           </p>
 
           <p>
-            Desde una edad temprana, me ha apasionado la idea de crear cosas
-            desde cero y entender su funcionamiento. He encontrado en la
-            programación una forma gratificante de seguir esa pasión y el deseo
-            de crear cosas.
+            {content.data.description.paragraphTwo}
           </p>
 
           <p>
-            Me gusta ver la programación y la creación de software como un mundo
-            complejo pero interesante hecho de piezas de lego, donde cada pieza
-            es fundamental para el funcionamiento del conjunto; donde estas
-            piezas al ser ensambladas reflejen el por qué amo la creación de las
-            cosas.
+            {content.data.description.paragraphThree}
           </p>
         </div>
       </div>
@@ -61,7 +72,7 @@ import MailIcon from '@components/icons/MailIcon.astro'
               href="https://github.com/VictorRodas99"
             >
               <GithubIcon size={30} />
-              <p class="hidden md:block">Sígueme en Github</p>
+              <p class="hidden md:block">{content.data.socials.github}</p>
             </a>
           </li>
           <li class="hover:text-primary-400">
@@ -70,7 +81,7 @@ import MailIcon from '@components/icons/MailIcon.astro'
               href="https://www.linkedin.com/in/victor-rodas-dev"
             >
               <LindekinIcon size={30} />
-              <p class="hidden md:block">Sígueme en LinkedIn</p>
+              <p class="hidden md:block">{content.data.socials.linkedin}</p>
             </a>
           </li>
           <li class="hover:text-primary-400">
