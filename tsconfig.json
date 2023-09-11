@@ -26,6 +26,9 @@
       ],
       "@css/*": [
         "src/css/*"
+      ],
+      "@i18n/*": [
+        "src/i18n/*"
       ]
     },
     "jsx": "react-jsx",
