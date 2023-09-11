@@ -1,0 +1,9 @@
+{
+  "title": "Projects",
+  "one": {
+    "description": "Developed with ReactJS for the Front-End and HonoJS with edge workers for the Back-End. While it does not allow real purchases, the application will keep you up to date with the latest computer and electronics products. The catalog is automatically updated weekly."
+  },
+  "two": {
+    "description": "Command-line media player written in NodeJS that supports content playback using various strategies. The application allows users to search and play music from YouTube (either playlists or via a URL) without the need to use a web browser."
+  }
+}

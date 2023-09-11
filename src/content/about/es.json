@@ -1,0 +1,14 @@
+{
+  "siteTitle": "Víctor Rodas | acerca de mí",
+  "title": "Acerca de mí",
+  "name": "Soy",
+  "description": {
+    "paragraphOne": "Diariamente me dedico a investigar y llevar a cabo proyectos relacionados con la programación. Esto incluye aplicaciones orientadas principalmente al desarrollo de mis habilidades en el Frontend, así como otros experimentos relacionados con el sistema a nivel más bajo o el Backend.",
+    "paragraphTwo": "Desde una edad temprana, me ha apasionado la idea de crear cosas desde cero y entender su funcionamiento. He encontrado en la programación una forma gratificante de seguir esa pasión y el deseo de crear cosas.",
+    "paragraphThree": "Me gusta ver la programación y la creación de software como un mundo complejo pero interesante hecho de piezas de lego, donde cada pieza es fundamental para el funcionamiento del conjunto; donde estas piezas al ser ensambladas reflejen el por qué amo la creación de las cosas."
+  },
+  "socials": {
+    "github": "Sígueme en Github",
+    "linkedin": "Sígueme en LinkedIn"
+  }
+}

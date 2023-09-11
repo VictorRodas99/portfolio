@@ -1,0 +1,14 @@
+{
+  "siteTitle": "Víctor Rodas | about me",
+  "title": "About me",
+  "name": "I'm",
+  "description": {
+    "paragraphOne": "On a daily basis, I dedicate myself to researching and carrying out projects related to programming. This includes applications primarily focused on developing my skills in frontend, as well as other experiments related to the lower-level system or backend.",
+    "paragraphTwo": "From an early age, I've been passionate about the idea of creating things from scratch and understanding how they work. I've found programming to be a rewarding way to pursue that passion and the desire to create things.",
+    "paragraphThree": "I like to see programming and software development as a complex yet fascinating world made up of lego pieces, where each piece is essential for the functioning of the whole; where assembling these pieces reflects why I love creating things."
+  },
+  "socials": {
+    "github": "Follow me on Github",
+    "linkedin": "Follow me on LinkedIn"
+  }
+}

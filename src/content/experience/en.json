@@ -1,0 +1,20 @@
+{
+  "title": "Experience",
+  "cards": {
+    "titleOne": "Work experience",
+    "titleTwo": "Responsibilities"
+  },
+  "experiences": {
+    "first": {
+      "project": "Hemoderivative management system",
+      "position": "Front-End Developer",
+      "date": "Feb 2022 - Aug 2022",
+      "description": "I was the lead frontend developer on an innovative project for a hemoderivative company. I designed and built the interface that allowed for efficient management of refrigerator inventory. My focus was on creating an intuitive and user-friendly user experience.",
+      "responsibilities": {
+        "one": "Develop and maintain the front-end of the various system endpoints.",
+        "two": "I closely collaborated with the team to integrate the system with a cloud-based database, enabling real-time access to crucial data from different devices.",
+        "three": "I ensured that the interface was functional and accessible on different devices, including computers and mobile phones, for flexible management from any location."
+      }
+    }
+  }
+}

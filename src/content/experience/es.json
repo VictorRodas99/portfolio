@@ -1,0 +1,20 @@
+{
+  "title": "Experiencia",
+  "cards": {
+    "titleOne": "Experiencia laboral",
+    "titleTwo": "Responsabilidades"
+  },
+  "experiences": {
+    "first": {
+      "project": "Sistema de gestión de hemoderivados",
+      "position": "Desarrollador Front-End",
+      "date": "Feb 2022 - Ag 2022",
+      "description": "Fui el principal desarrollador del frontend en un proyecto innovador para una empresa de hemoderivados. Diseñé y construí la interfaz que permitió gestionar de manera eficiente el inventario de heladeras. Mi enfoque se centró en crear una experiencia de usuario intuitiva y amigable.",
+      "responsibilities": {
+        "one": "Desarollar y mantener el Front-End de los diferentes endpoints del sistema.",
+        "two": "Colaboré estrechamente con el equipo para integrar el sistema con una base de datos en la nube, lo que permitió el acceso en tiempo real a los datos cruciales desde distintos dispositivos.",
+        "three": "Aseguré que la interfaz fuera funcional y accesible en diferentes dispositivos, incluyendo computadoras y teléfonos móviles, para una gestión flexible desde cualquier ubicación."
+      }
+    }
+  }
+}
