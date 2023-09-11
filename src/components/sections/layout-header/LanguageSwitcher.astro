@@ -1,0 +1,44 @@
+---
+import LanguagesIcon from '@icons/LanguagesIcon.astro'
+import { languages } from '@i18n/ui'
+---
+
+<div class="px-4 grid place-items-center border-l-[1px] relative">
+  <button
+    id="language-btn"
+    class="text-primary-400 header-button"
+    type="button"
+    aria-label="language selector trigger"
+  >
+    <LanguagesIcon />
+  </button>
+
+  <div id="lang-selector" class="hidden absolute right-0 top-[150%]">
+    <ul class="flex flex-col gap-2 bg-secondary-200 dark:bg-secondary-100 py-2 px-3 rounded-lg border">
+      {
+        Object.entries(languages).map(([lang, label]) => (
+          <li class="hover:text-primary-400 transition-colors">
+            <a href={`/${lang}/`}>{label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<script>
+  let langSelectorIsVisible = true
+
+  const langButton = document.querySelector('#language-btn') as HTMLButtonElement
+  const langSelector = document.querySelector('#lang-selector') as HTMLDivElement
+
+  langButton.addEventListener('click', () => {
+    langSelectorIsVisible = !langSelectorIsVisible
+
+    const finalState = langSelectorIsVisible
+      ? 'none'
+      : 'block'
+
+    langSelector.style.display = finalState
+  })
+</script>
