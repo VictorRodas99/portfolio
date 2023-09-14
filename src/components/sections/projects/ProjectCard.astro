@@ -1,9 +1,9 @@
 ---
-import { Image } from 'astro:assets'
+// import { Image } from 'astro:assets'
 
 interface Props {
-  darkImage: ImageMetadata
-  lightImage: ImageMetadata
+  darkImage: string
+  lightImage: string
   projectName: string
   projectDescription: string
   repoUrl: string
@@ -21,16 +21,30 @@ const { darkImage, lightImage, projectName, projectDescription, repoUrl } = Astr
     class="group flex-grow lg:w-[25%] border border-primary-100 relative rounded-md overflow-hidden"
   >
     <header class="grid items-center relative lg:min-h-[300px] overflow-hidden">
-      <Image
+      <!-- <Image
         class="hidden dark:block group-hover:scale-105 transition-transform duration-500 z-10"
         src={darkImage}
-        alt="E-commerce Web Project"
+        alt={projectName}
       />
       <Image
         class="block dark:hidden group-hover:scale-105 transition-transform duration-500 z-10"
         src={lightImage}
-        alt="E-commerce Web Project"
-      />
+        alt={projectName}
+      /> -->
+      <img
+        class="hidden dark:block group-hover:scale-105 transition-transform duration-500 z-10"
+        src={darkImage}
+        alt={projectName}
+        decoding="async"
+        loading="lazy"
+      >
+      <img
+        class="block dark:hidden group-hover:scale-105 transition-transform duration-500 z-10"
+        src={lightImage}
+        alt={projectName}
+        decoding="async"
+        loading="lazy"
+      >
     </header>
 
     <div

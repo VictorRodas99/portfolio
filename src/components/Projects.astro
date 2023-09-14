@@ -3,10 +3,10 @@ import TechnologyCard from '@components/sections/experience/TechnologyCard.astro
 import ProjectCard from '@components/sections/projects/ProjectCard.astro'
 import Title from '@components/Title.astro'
 
-import projectOneImageLight from '@assets/img/e-commerce-full-light.png'
-import projectTwoImageLight from '@assets/img/just-music-light.png'
-import projectTwoImageDark from '@assets/img/just-music-dark.png'
-import projectOneImage from '@assets/img/e-commerce-full.png'
+// import projectOneImageLight from '@assets/img/e-commerce-full-light.png'
+// import projectTwoImageLight from '@assets/img/just-music-light.png'
+// import projectTwoImageDark from '@assets/img/just-music-dark.png'
+// import projectOneImage from '@assets/img/e-commerce-full.png'
 
 import CloudflareIcon from '@components/icons/skills/CloudflareIcon.astro'
 import PowershellIcon from '@components/icons/skills/PowershellIcon.astro'
@@ -27,8 +27,8 @@ const { data: content } = await getEntry('projects', Astro.params.lang)
 
   <article class="flex flex-col lg:flex-row gap-10">
     <ProjectCard
-      darkImage={projectOneImage}
-      lightImage={projectOneImageLight}
+      darkImage="/img/e-commerce-full.webp"
+      lightImage="/img/e-commerce-full-light.webp"
       projectName={projectsData.one.name}
       projectDescription={content.one.description}
       repoUrl={projectsData.one.repo}
@@ -64,8 +64,8 @@ const { data: content } = await getEntry('projects', Astro.params.lang)
     </ProjectCard>
 
     <ProjectCard
-      darkImage={projectTwoImageDark}
-      lightImage={projectTwoImageLight}
+      darkImage="/img/just-music-dark.webp"
+      lightImage="/img/just-music-light.webp"
       projectName={projectsData.two.name}
       projectDescription={content.two.description}
       repoUrl={projectsData.two.repo}
