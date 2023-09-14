@@ -14,7 +14,7 @@ import { languages } from '@i18n/ui'
   </button>
 
   <div id="lang-selector" class="hidden absolute right-0 top-[150%]">
-    <ul class="flex flex-col gap-2 bg-secondary-200 dark:bg-secondary-100 py-2 px-3 rounded-lg border">
+    <ul class="flex flex-col gap-2 bg-secondary-200 dark:bg-secondary-100 py-3 px-4 rounded-lg">
       {
         Object.entries(languages).map(([lang, label]) => (
           <li class="hover:text-primary-400 transition-colors">
@@ -27,6 +27,8 @@ import { languages } from '@i18n/ui'
 </div>
 
 <script>
+  import { changeDialogState } from '@client-scripts/dialog-controller'
+
   let langSelectorIsVisible = true
 
   const langButton = document.querySelector('#language-btn') as HTMLButtonElement
@@ -34,11 +36,20 @@ import { languages } from '@i18n/ui'
 
   langButton.addEventListener('click', () => {
     langSelectorIsVisible = !langSelectorIsVisible
-
+    console.log(langSelectorIsVisible)
+    
     const finalState = langSelectorIsVisible
       ? 'none'
       : 'block'
 
     langSelector.style.display = finalState
+  })
+
+  window.addEventListener('click', (event) => {
+    langSelectorIsVisible = changeDialogState(event, {
+      dialogState: langSelectorIsVisible,
+      dialog: langSelector,
+      trigger: langButton
+    })
   })
 </script>
