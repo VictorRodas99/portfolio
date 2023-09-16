@@ -1,0 +1,19 @@
+---
+import ResumeIcon from '@components/icons/ResumeIcon.astro'
+---
+
+<a
+  href="https://drive.google.com/file/d/1dEtjJSBMCOYSKmZDfVKQ86KnJ9ouwxyi/view?usp=sharing"
+  target="_blank"
+  class="block group absolute bottom-0 md:bottom-8 right-8 z-20 animate-bounce md:animate-none transition-all duration-500"
+>
+  <div
+    id="resume"
+    class="text-primary-50 relative p-2 transition-colors duration-500 overflow-hidden"
+  >
+    <div class="flex flex-col justify-center items-center md:translate-y-5 md:group-hover:translate-y-0 transition-transform duration-500">
+      <ResumeIcon size={40} />
+      <span class="hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">Resume</span>
+    </div>
+  </div>
+</a>
