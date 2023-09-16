@@ -29,15 +29,15 @@ const content = await getEntry('hero', lang)
   <footer
     class="flex justify-center md:justify-normal gap-6 text-secondary-200 pb-2"
   >
-    <a href="https://github.com/VictorRodas99" class="social-icons">
+    <a href="https://github.com/VictorRodas99" class="social-icons" aria-label={content.data.socials.github}>
       <GithubIcon />
     </a>
 
-    <a href="mailto:victormrodas99@gmail.com" class="social-icons">
+    <a href="mailto:victormrodas99@gmail.com" class="social-icons" aria-label={content.data.socials.email}>
       <MailIcon />
     </a>
 
-    <a href="https://www.linkedin.com/in/victor-rodas-dev" class="social-icons">
+    <a href="https://www.linkedin.com/in/victor-rodas-dev" class="social-icons" aria-label={content.data.socials.linkedin}>
       <LinkedinIcon />
     </a>
   </footer>
