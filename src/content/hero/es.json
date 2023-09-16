@@ -1,4 +1,9 @@
 {
   "prefix": "Soy",
-  "description": "Y mi principal objetivo es utilizar la programación como un medio para crear maravillas duraderas."
+  "description": "Y mi principal objetivo es utilizar la programación como un medio para crear maravillas duraderas.",
+  "socials": {
+    "github": "Mira mi github",
+    "email": "Contactame en mi email",
+    "linkedin": "Mira mi LinkedIn"
+  }
 }
