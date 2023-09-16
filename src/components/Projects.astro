@@ -34,28 +34,28 @@ const { data: content } = await getEntry('projects', Astro.params.lang)
       repoUrl={projectsData.one.repo}
     >
       <li>
-        <a href="https://react.dev/">
+        <a href="https://react.dev/" aria-label="React">
           <TechnologyCard name="React" bgColor="#04c2e6">
             <ReactIcon theme="dark" size={25} />
           </TechnologyCard>
         </a>
       </li>
       <li>
-        <a href="https://nodejs.org/en">
+        <a href="https://nodejs.org/en" aria-label="NodeJS">
           <TechnologyCard name="NodeJS" bgColor="#81cd39">
             <NodejsIcon theme="dark" size={25} />
           </TechnologyCard>
         </a>
       </li>
       <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" aria-label="CSS">
           <TechnologyCard name="CSS" bgColor="#53abd8">
             <CSSIcon size={25} />
           </TechnologyCard>
         </a>
       </li>
       <li>
-        <a href="https://workers.cloudflare.com/">
+        <a href="https://workers.cloudflare.com/" aria-label="Edge workers">
           <TechnologyCard name="Edge workers" bgColor="#f38020">
             <CloudflareIcon theme="dark" size={25} />
           </TechnologyCard>
@@ -71,14 +71,14 @@ const { data: content } = await getEntry('projects', Astro.params.lang)
       repoUrl={projectsData.two.repo}
     >
       <li>
-        <a href="https://nodejs.org/en">
+        <a href="https://nodejs.org/en" aria-label="NodeJS">
           <TechnologyCard name="NodeJS" bgColor="#81cd39">
             <NodejsIcon theme="dark" size={25} />
           </TechnologyCard>
         </a>
       </li>
       <li>
-        <a href="https://learn.microsoft.com/en-us/powershell/">
+        <a href="https://learn.microsoft.com/en-us/powershell/" aria-label="PowerShell">
           <TechnologyCard name="Powershell" bgColor="#4579d3">
             <PowershellIcon size={25} />
           </TechnologyCard>
@@ -87,6 +87,7 @@ const { data: content } = await getEntry('projects', Astro.params.lang)
       <li>
         <a
           href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#What-is-Bash_003f"
+          aria-label="Bash"  
         >
           <TechnologyCard name="Bash" bgColor="#97d49e">
             <BashIcon size={25} />

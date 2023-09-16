@@ -12,7 +12,6 @@ const { tool, navigateTo } = Astro.props
   target="_blank"
   title={tool}
   class="md:w-[200px] flex items-center gap-5 border rounded-lg py-4 px-6 hover:-translate-y-1 transition-all dark:hover:bg-primary-100/5"
-  aria-label={tool}
 >
   <slot name="icon" />
   <h3 class="hidden md:block font-bold text-lg">{tool}</h3>
