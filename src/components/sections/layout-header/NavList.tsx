@@ -12,14 +12,14 @@ export default function NavList({
   className,
   closeDialog
 }: NavProps) {
+  const [lang, setLang] = useState(defaultLang)
   const [nav, setNav] = useState(ui[defaultLang])  
 
   useEffect(() => {
     const lang = getLangfromUrl(new URL(window.location.href))
 
-    console.log({ lang })
-
     setNav(ui[lang])
+    setLang(lang)
   }, [])
   
   const showDevNotification = () => {
@@ -35,7 +35,7 @@ export default function NavList({
         <a href="about">{nav['nav.about']}</a>
       </li>
       <li className={className} onClick={closeDialog}>
-        <a href="#projects">{nav['nav.projects']}</a>
+        <a href={`/${lang}/#projects`}>{nav['nav.projects']}</a>
       </li>
       <li
         className={className}
