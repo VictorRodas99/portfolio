@@ -9,12 +9,10 @@ interface Props {
 const { name, description, iconColor, navigateTo } = Astro.props
 ---
 
-<!-- TODO: make a bg gradient for light theme -->
 <a
   href={navigateTo ?? '#'}
   title={name}
   target="_blank"
-  id="skill-card"
   class="group relative transition-all duration-300 flex flex-col gap-4 items-center justify-center min-h-[300px] p-4 border dark:border-primary-100 rounded md:rounded-lg backdrop-blur-[2px] overflow-hidden dark:hover:bg-primary-100/5"
 >
   <div
@@ -31,7 +29,7 @@ const { name, description, iconColor, navigateTo } = Astro.props
 </a>
 
 <style>
-  #skill-card::before {
+  a::before {
     content: '';
     background-color: #282836;
     width: 60%;
@@ -47,7 +45,7 @@ const { name, description, iconColor, navigateTo } = Astro.props
     transition: all 0.5s ease-in-out;
   }
 
-  #skill-card:hover::before {
+  a:hover::before {
     left: 140%;
   }
 </style>
