@@ -9,6 +9,8 @@ import Projects from '@components/Projects.astro'
 import Skills from '@components/Skills.astro'
 import Resume from '@components/Resume.astro'
 
+import Animate from '@components/Animate'
+
 export async function getStaticPaths () {
   return [
     { params: { lang: 'en' } },
@@ -23,13 +25,21 @@ const { lang } = Astro.params
   <GradientBackground client:visible />
 
   <section class="flex flex-col w-full gap-16">
-    <HeroSection />
+    <Animate client:load>
+      <HeroSection />
+    </Animate>
 
     <ArrowButton />
     <Resume />
 
     <Experience />
-    <Projects />
-    <Skills />
+
+    <Animate client:visible>
+      <Projects />
+    </Animate>
+
+    <Animate client:visible>
+      <Skills />
+    </Animate>
   </section>
 </Layout>
